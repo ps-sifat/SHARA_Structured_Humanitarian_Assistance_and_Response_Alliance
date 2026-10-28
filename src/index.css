@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Hind Siliguri', 'Noto Sans Bengali', system-ui, sans-serif;
+  --font-display: 'Noto Serif Bengali', 'Hind Siliguri', serif;
+  --color-forest: #12372a;
+  --color-leaf: #2e6b4f;
+  --color-mint: #eaf4ee;
+  --color-paper: #f8faf8;
+  --color-ink: #18251e;
+  --color-ink-soft: #5b685f;
+  --color-line: #e1e7e2;
+  --color-alert: #dc2626;
+  --color-warn: #f59e0b;
+}
+
+:root {
+  --background: #f8faf8;
+  --foreground: #18251e;
+  --primary: #12372a;
+  --ring: #2e6b4f;
+  --radius: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: #bfe0cd;
+}
+:focus-visible {
+  outline: 3px solid #2e6b4f;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: #c9d3cc transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse-ring {
+  0% {
+    r: 4;
+    opacity: 0.6;
+  }
+  100% {
+    r: 11;
+    opacity: 0;
+  }
+}
+.pulse-ring {
+  animation: pulse-ring 2.2s ease-out infinite;
+}

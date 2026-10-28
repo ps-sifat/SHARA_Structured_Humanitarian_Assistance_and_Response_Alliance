@@ -1,0 +1,10 @@
+{
+  "description": "Connects flood-affected individuals in Bangladesh with volunteers and organizations for quick assistance requests, enhancing disaster response efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
