@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}<link rel="stylesheet" href="{% static 'volunteer_team/volunteer_team.css' %}">{% endblock %}
+{% block content %}
+<div data-shara-node="layouts-11297" class="shara-074 shara-191 shara-352 shara-361">
+  <aside data-shara-node="layouts-11401" class="shara-156 shara-169 shara-184 shara-272 shara-346 shara-347 shara-353 shara-363">
+    <div data-shara-node="layouts-11517" class="shara-044 shara-103 shara-106 shara-109 shara-117 shara-203 shara-351 shara-366">
+      <a href="{% url 'home' %}"><span data-shara-node="ui-656" class="shara-047 shara-106 shara-115"><svg data-shara-node="ui-719" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect data-shara-node="ui-795" width="34" height="34" rx="9" fill="#EAF4EE"></rect><path data-shara-node="ui-927" d="M17 7.5c-2.6 3.4-6 6-6 9.6a6 6 0 0 0 12 0c0-3.6-3.4-6.2-6-9.6Z" fill="#12372A"></path><path data-shara-node="ui-1076" d="M7 24.5c3 0 3-1.6 5.2-1.6s2.8 1.6 4.8 1.6 2.8-1.6 4.8-1.6 2.2 1.6 5.2 1.6" stroke="#2E6B4F" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg><span data-shara-node="ui-1309" class="shara-236 shara-243 shara-251 shara-256 shara-279">SHARA</span></span></a>
+      <div data-shara-node="layouts-11684" class="shara-348">
+        <div data-shara-node="layouts-2185" role="group" aria-label="ভাষা নির্বাচন করুন" class="shara-047 shara-096 shara-106 shara-112 shara-145 shara-150 shara-169 shara-195 shara-199 shara-267"><svg data-shara-node="layouts-2383" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shara-016"><use href="{% static 'assets/icons/shara.svg' %}#languages"></use></svg><button data-shara-node="ui-2605" data-shara-key="bn" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-184 shara-279 shara-302 shara-068 shara-210 shara-242 shara-067 shara-139 shara-207" lang="bn" aria-pressed="true">বাংলা</button><button data-shara-node="ui-2605" data-shara-key="en" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-068 shara-210 shara-242 shara-067 shara-139 shara-207" lang="en" aria-pressed="false">English</button></div>
+      </div>
+      <div data-shara-node="layouts-11770" class="shara-349">
+        <p data-shara-node="layouts-11808" class="shara-242">স্বেচ্ছাসেবক</p>
+        <p data-shara-node="layouts-11870" class="shara-255 shara-279">ফারজানা আক্তার</p>
+      </div>
+    </div>
+    <nav data-shara-node="layouts-11963" aria-label="ড্যাশবোর্ড মেনু" class="shara-044 shara-112 shara-138 shara-210 shara-230 shara-362"><a data-shara-key="/volunteer" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'volunteer_dashboard' %}">ড্যাশবোর্ড</a><a data-shara-key="/volunteer/missions" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'volunteer_missions' %}">আমার কার্যক্রম</a><a data-shara-key="/volunteer/organization" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'volunteer_organization' %}">আমার সংগঠন</a><a data-shara-key="/volunteer/team" aria-current="page" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-195 shara-267" href="{% url 'volunteer_team' %}">আমার ছোট দল</a><a data-shara-key="/volunteer/requests" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'volunteer_requests' %}">সহায়তার আবেদন</a><a data-shara-key="/volunteer/profile/edit" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'volunteer_profile' %}">প্রোফাইল ও প্রাপ্যতা</a></nav>
+    <div data-shara-node="layouts-12383" class="shara-044 shara-103 shara-116 shara-154 shara-174 shara-203 shara-350"><button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-068 shara-210 shara-242 ">ডেভেলপার নিয়ন্ত্রণ</button><a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-070 shara-212 shara-247 shara-272 shara-308" href="{% url 'home' %}">পাবলিক হোম</a><button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-070 shara-212 shara-247 shara-272 shara-308">লগআউট</button></div>
+  </aside>
+  <main data-shara-node="layouts-12896" id="main" class="shara-092 shara-212 shara-219 shara-334 shara-335">
+    <div data-shara-node="Volunteer-15387" class="shara-017 shara-081">
+      <div data-shara-node="ui-15863" class="shara-038 shara-044 shara-103 shara-107 shara-109 shara-116">
+        <div data-shara-node="ui-15944">
+          <h1 data-shara-node="ui-15958" class="shara-236 shara-237 shara-251 shara-267 shara-338">তিস্তা উদ্ধার দল</h1>
+          <p data-shara-node="ui-16082" class="shara-022 shara-270">সংগঠন: সবুজ বাংলা ফাউন্ডেশন</p>
+        </div>
+      </div>
+      <section data-shara-node="ui-16286" class="shara-148 shara-150 shara-169 shara-195 shara-204 ">
+        <p data-shara-node="Volunteer-15585">কার্যএলাকা: কুড়িগ্রাম</p>
+        <p data-shara-node="Volunteer-15648" class="shara-024">সক্ষমতা: খাদ্য, বিশুদ্ধ পানি, ওষুধ, উদ্ধার, আশ্রয়</p>
+        <p data-shara-node="Volunteer-15732" class="shara-024">নেতা: ফারজানা আক্তার</p>
+        <div data-shara-node="Volunteer-15855" class="shara-025"><span data-shara-node="ui-3466" class="shara-047 shara-106 shara-113 shara-259 shara-144 shara-150 shara-209 shara-214 shara-246 shara-253 shara-190 shara-275 shara-170"><span data-shara-node="ui-3654" class="shara-051 shara-144 shara-183" aria-hidden="true"></span>প্রস্তুত</span></div>
+        <h2 data-shara-node="ui-17080" class="shara-035 shara-236 shara-243 shara-251 shara-267"><span data-shara-node="Volunteer-15968" class="shara-027 shara-043">দলের সদস্য</span></h2>
+        <ul data-shara-node="Volunteer-16055" class="shara-134 shara-135">
+          <li data-shara-node="Volunteer-16132" data-shara-key="v1" class="shara-216">ফারজানা আক্তার — দলনেতা</li>
+          <li data-shara-node="Volunteer-16132" data-shara-key="v2" class="shara-216">নাসির উদ্দিন — সদস্য</li>
+        </ul>
+        <a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-184 shara-279 shara-302 shara-070 shara-212 shara-247 shara-027" href="{% url 'volunteer_missions' %}">দলের কার্যক্রম দেখুন</a>
+      </section>
+    </div>
+  </main>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'volunteer_team/volunteer_team.js' %}" defer></script>{% endblock %}

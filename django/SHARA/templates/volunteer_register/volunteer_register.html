@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}<link rel="stylesheet" href="{% static 'volunteer_register/volunteer_register.css' %}">{% endblock %}
+{% block content %}
+<div data-shara-node="layouts-6987" class="shara-044 shara-074 shara-102">
+  <header data-shara-node="layouts-7063" class="shara-004 shara-005 shara-014 shara-156 shara-169 shara-192 shara-292">
+    <div data-shara-node="layouts-7157" class="shara-017 shara-044 shara-072 shara-084 shara-103 shara-106 shara-116 shara-212 shara-216 shara-333">
+      <a aria-label="SHARA হোম" href="{% url 'home' %}"><span data-shara-node="ui-656" class="shara-047 shara-106 shara-115"><svg data-shara-node="ui-719" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect data-shara-node="ui-795" width="34" height="34" rx="9" fill="#12372A"></rect><path data-shara-node="ui-927" d="M17 7.5c-2.6 3.4-6 6-6 9.6a6 6 0 0 0 12 0c0-3.6-3.4-6.2-6-9.6Z" fill="#EAF4EE"></path><path data-shara-node="ui-1076" d="M7 24.5c3 0 3-1.6 5.2-1.6s2.8 1.6 4.8 1.6 2.8-1.6 4.8-1.6 2.2 1.6 5.2 1.6" stroke="#2E6B4F" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg><span data-shara-node="ui-1309" class="shara-236 shara-243 shara-251 shara-256 shara-267">SHARA</span></span></a>
+      <nav data-shara-node="layouts-7356" aria-label="প্রধান মেনু" class="shara-040 shara-046 shara-112 shara-368"><a data-shara-key="/" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-270 shara-304" href="{% url 'home' %}">হোম</a><a data-shara-key="/map" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-270 shara-304" href="{% url 'map' %}">বন্যা পরিস্থিতি</a><a data-shara-key="/track" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-270 shara-304" href="{% url 'track' %}">আবেদন ট্র্যাক করুন</a></nav>
+      <div data-shara-node="layouts-7556" class="shara-041 shara-044 shara-087 shara-103 shara-106 shara-111 shara-114">
+        <div data-shara-node="layouts-7651" class="shara-046 shara-322">
+          <div data-shara-node="layouts-2185" role="group" aria-label="ভাষা নির্বাচন করুন" class="shara-047 shara-096 shara-106 shara-112 shara-145 shara-150 shara-169 shara-195 shara-199 shara-267"><svg data-shara-node="layouts-2383" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shara-016"><use href="{% static 'assets/icons/shara.svg' %}#languages"></use></svg><button data-shara-node="ui-2605" data-shara-key="bn" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-184 shara-279 shara-302 shara-068 shara-210 shara-242 shara-067 shara-139 shara-207" lang="bn" aria-pressed="true">বাংলা</button><button data-shara-node="ui-2605" data-shara-key="en" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-068 shara-210 shara-242 shara-067 shara-139 shara-207" lang="en" aria-pressed="false">English</button></div>
+        </div>
+        <button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-070 shara-212 shara-247 shara-207 shara-320" aria-label="ভাষা নির্বাচন করুন" aria-haspopup="dialog" aria-expanded="false"><svg data-shara-node="layouts-8048" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="{% static 'assets/icons/shara.svg' %}#languages"></use></svg></button>
+        <a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-070 shara-212 shara-247 shara-042 shara-321" href="{% url 'login' %}">লগইন</a>
+        <a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-184 shara-279 shara-302 shara-070 shara-212 shara-247 shara-175 shara-300" href="{% url 'apply' %}">সাহায্যের আবেদন</a>
+        <button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-070 shara-212 shara-247 " aria-label="প্রধান মেনু খুলুন" aria-expanded="false"><svg data-shara-node="layouts-8606" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="{% static 'assets/icons/shara.svg' %}#menu"></use></svg></button>
+      </div>
+    </div>
+  </header>
+  <main data-shara-node="layouts-9668" id="main" class="shara-095">
+    <div data-shara-node="Volunteer-3130" class="shara-017 shara-080 shara-212 shara-221 shara-337">
+      <div data-shara-node="ui-15863" class="shara-038 shara-044 shara-103 shara-107 shara-109 shara-116">
+        <div data-shara-node="ui-15944">
+          <h1 data-shara-node="ui-15958" class="shara-236 shara-237 shara-251 shara-267 shara-338">স্বেচ্ছাসেবক হিসেবে নিবন্ধন</h1>
+          <p data-shara-node="ui-16082" class="shara-022 shara-270">পরিচয়, কাজের এলাকা ও সক্ষমতা হালনাগাদ রাখুন</p>
+        </div>
+      </div>
+      <form data-shara-node="Volunteer-3651" class="shara-127 shara-141 shara-150 shara-169 shara-195 shara-204 shara-332">
+        <div data-shara-node="ProfileImage-2222" class="shara-148 shara-150 shara-169 shara-191 shara-203" aria-busy="false">
+          <div data-shara-node="ProfileImage-2317" class="shara-044 shara-103 shara-106 shara-117">
+            <span data-shara-node="ProfileImage-847" role="img" aria-label="প্রোফাইল ছবি" class="shara-048 shara-096 shara-104 shara-137 shara-150 shara-169 shara-144 shara-184 shara-279 shara-061 shara-238 shara-255"><svg data-shara-node="ProfileImage-1616" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="{% static 'assets/icons/shara.svg' %}#user-round"></use></svg></span>
+            <div data-shara-node="ProfileImage-2466" class="shara-092 shara-095">
+              <p data-shara-node="ProfileImage-2509" class="shara-255 shara-269">প্রোফাইল ছবি</p>
+              <p data-shara-node="ProfileImage-2637" id="shara-page-page-layout--layouts-9843--page-content--Volunteer-9547--Volunteer-3937--2-hint" class="shara-022 shara-242 shara-270">JPG, PNG অথবা WebP · সর্বোচ্চ ৫ মেগাবাইট</p>
+              <input data-shara-node="ui-16594" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 shara-042" id="shara-page-page-layout--layouts-9843--page-content--Volunteer-9547--Volunteer-3937--2" type="file" accept="image/jpeg,image/png,image/webp" aria-label="প্রোফাইল ছবি বেছে নিন">
+              <div data-shara-node="ProfileImage-3969" class="shara-025 shara-044 shara-103 shara-114"><button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-070 shara-212 shara-247 " id="shara-page-page-layout--layouts-9843--page-content--Volunteer-9547--Volunteer-3937--2-choose" aria-describedby="shara-page-page-layout--layouts-9843--page-content--Volunteer-9547--Volunteer-3937--2-hint"><svg data-shara-node="ProfileImage-4340" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="{% static 'assets/icons/shara.svg' %}#camera"></use></svg>ছবি যুক্ত করুন</button></div>
+            </div>
+          </div>
+        </div>
+        <section data-shara-node="Volunteer-4154" class="shara-125">
+          <h2 data-shara-node="ui-17080" class="shara-035 shara-236 shara-243 shara-251 shara-267">ব্যক্তিগত তথ্য</h2>
+          <div data-shara-node="Volunteer-4258" class="shara-045 shara-118 shara-328">
+            <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113"><label data-shara-node="ui-4123" for="v-name" class="shara-247 shara-255 shara-269">পূর্ণ নাম <span data-shara-node="ui-4242" class="shara-264" aria-label="আবশ্যক">*</span></label><input data-shara-node="ui-16594" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-name" required="" value=""></div>
+            <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113"><label data-shara-node="ui-4123" for="v-phone" class="shara-247 shara-255 shara-269">মোবাইল নম্বর <span data-shara-node="ui-4242" class="shara-264" aria-label="আবশ্যক">*</span></label><input data-shara-node="ui-16594" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-phone" required="" inputmode="tel" placeholder="০১৭০০-০০০০০০" value=""></div>
+          </div>
+          <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113">
+            <label data-shara-node="ui-4123" for="v-org" class="shara-247 shara-255 shara-269">সদস্যপদের জন্য সংগঠন <span data-shara-node="ui-4354" class="shara-242 shara-254 shara-270">(ঐচ্ছিক)</span></label>
+            <select data-shara-node="ui-16761" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-org">
+              <option data-shara-node="Volunteer-5407" value="" selected="">পরে সংগঠন খুঁজব</option>
+              <option data-shara-node="Volunteer-5585" data-shara-key="o1" value="o1">সবুজ বাংলা ফাউন্ডেশন</option>
+            </select>
+            <p data-shara-node="ui-4508" class="shara-242 shara-270">নির্বাচন করলে অনুরোধ যাবে, সরাসরি সদস্যপদ নয়। পরে সংগঠন খুঁজেও আবেদন করতে পারবেন।</p>
+          </div>
+        </section>
+        <section data-shara-node="Volunteer-6047" class="shara-125 shara-154 shara-169 shara-227">
+          <h2 data-shara-node="ui-17080" class="shara-035 shara-236 shara-243 shara-251 shara-267">অবস্থান ও কাজের এলাকা</h2>
+          <div data-shara-node="Volunteer-6184" class="shara-045 shara-118 shara-328">
+            <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113">
+              <label data-shara-node="ui-4123" for="v-district" class="shara-247 shara-255 shara-269">বর্তমান জেলা <span data-shara-node="ui-4242" class="shara-264" aria-label="আবশ্যক">*</span></label>
+              <select data-shara-node="ui-16761" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-district" required="">
+                <option data-shara-node="Volunteer-6633" value="" selected="">জেলা বেছে নিন</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="কুড়িগ্রাম">কুড়িগ্রাম</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="গাইবান্ধা">গাইবান্ধা</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="সিরাজগঞ্জ">সিরাজগঞ্জ</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="সুনামগঞ্জ">সুনামগঞ্জ</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="সিলেট">সিলেট</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="নেত্রকোনা">নেত্রকোনা</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="জামালপুর">জামালপুর</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="ফেনী">ফেনী</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="নোয়াখালী">নোয়াখালী</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="খুলনা">খুলনা</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="ঢাকা">ঢাকা</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="চট্টগ্রাম">চট্টগ্রাম</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="রংপুর">রংপুর</option>
+                <option data-shara-node="Volunteer-6720" data-shara-key="বরিশাল">বরিশাল</option>
+              </select>
+            </div>
+            <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113">
+              <label data-shara-node="ui-4123" for="v-upazila" class="shara-247 shara-255 shara-269">বর্তমান উপজেলা <span data-shara-node="ui-4242" class="shara-264" aria-label="আবশ্যক">*</span></label>
+              <select data-shara-node="ui-16761" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-upazila" required="" disabled="">
+                <option data-shara-node="Volunteer-7185" value="" selected="">উপজেলা বেছে নিন</option>
+              </select>
+            </div>
+          </div>
+          <fieldset data-shara-node="ui-17387">
+            <legend data-shara-node="ui-17409" class="shara-034 shara-255 shara-269">কাজ করতে আগ্রহী এলাকা (অন্তত একটি)</legend>
+            <div data-shara-node="ui-17484" class="shara-044 shara-103 shara-114"></div>
+          </fieldset>
+        </section>
+        <section data-shara-node="Volunteer-7698" class="shara-125 shara-154 shara-169 shara-227">
+          <h2 data-shara-node="ui-17080" class="shara-035 shara-236 shara-243 shara-251 shara-267">দক্ষতা ও সক্ষমতা</h2>
+          <fieldset data-shara-node="ui-17387">
+            <legend data-shara-node="ui-17409" class="shara-034 shara-255 shara-269">দক্ষতা (অন্তত একটি)</legend>
+            <div data-shara-node="ui-17484" class="shara-044 shara-103 shara-114"><label data-shara-node="ui-17626" data-shara-key="নৌকা চালনা" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">নৌকা চালনা</label><label data-shara-node="ui-17626" data-shara-key="প্রাথমিক চিকিৎসা" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">প্রাথমিক চিকিৎসা</label><label data-shara-node="ui-17626" data-shara-key="রান্না ও খাদ্য বিতরণ" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">রান্না ও খাদ্য বিতরণ</label><label data-shara-node="ui-17626" data-shara-key="সাঁতার" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">সাঁতার</label><label data-shara-node="ui-17626" data-shara-key="যোগাযোগ সমন্বয়" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">যোগাযোগ সমন্বয়</label><label data-shara-node="ui-17626" data-shara-key="যানবাহন চালনা" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">যানবাহন চালনা</label></div>
+          </fieldset>
+          <div data-shara-node="ui-4072" class="shara-044 shara-102 shara-113">
+            <label data-shara-node="ui-4123" for="v-availability" class="shara-247 shara-255 shara-269">প্রাপ্যতা <span data-shara-node="ui-4242" class="shara-264" aria-label="আবশ্যক">*</span></label>
+            <select data-shara-node="ui-16761" class="shara-071 shara-078 shara-142 shara-150 shara-159 shara-195 shara-211 shara-240 shara-269 shara-296 shara-298 shara-317 shara-318 " id="v-availability">
+              <option data-shara-node="Volunteer-8391" data-shara-key="available" value="available" selected="">এখনই প্রস্তুত</option>
+              <option data-shara-node="Volunteer-8391" data-shara-key="limited" value="limited">সীমিত প্রাপ্যতা</option>
+              <option data-shara-node="Volunteer-8391" data-shara-key="unavailable" value="unavailable">অনুপলব্ধ</option>
+            </select>
+          </div>
+          <fieldset data-shara-node="ui-17387">
+            <legend data-shara-node="ui-17409" class="shara-034 shara-255 shara-269">বিশেষ সক্ষমতা</legend>
+            <div data-shara-node="ui-17484" class="shara-044 shara-103 shara-114"><label data-shara-node="ui-17626" data-shara-key="যানবাহন ব্যবহারের সুযোগ আছে" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">যানবাহন ব্যবহারের সুযোগ আছে</label><label data-shara-node="ui-17626" data-shara-key="সাঁতার জানি" class="shara-044 shara-070 shara-099 shara-106 shara-114 shara-144 shara-150 shara-212 shara-253 shara-314 shara-316 shara-169 shara-195 shara-269 shara-298"><input data-shara-node="ui-18048" type="checkbox" class="shara-001">সাঁতার জানি</label></div>
+          </fieldset>
+        </section>
+        <div data-shara-node="Volunteer-9100" class="shara-044 shara-103 shara-111 shara-116 shara-154 shara-169 shara-226"><a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-070 shara-212 shara-247 " href="{% url 'home' %}">বাতিল</a><button data-shara-node="ui-2605" type="submit" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-184 shara-279 shara-302 shara-070 shara-212 shara-247 ">নিবন্ধন সম্পন্ন করুন</button></div>
+      </form>
+    </div>
+  </main>
+  <footer data-shara-node="layouts-9874" class="shara-184 shara-272">
+    <div data-shara-node="layouts-9923" class="shara-017 shara-045 shara-084 shara-119 shara-212 shara-221 shara-333 shara-343">
+      <div data-shara-node="layouts-10014">
+        <span data-shara-node="ui-656" class="shara-047 shara-106 shara-115"><svg data-shara-node="ui-719" width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect data-shara-node="ui-795" width="34" height="34" rx="9" fill="#EAF4EE"></rect><path data-shara-node="ui-927" d="M17 7.5c-2.6 3.4-6 6-6 9.6a6 6 0 0 0 12 0c0-3.6-3.4-6.2-6-9.6Z" fill="#12372A"></path><path data-shara-node="ui-1076" d="M7 24.5c3 0 3-1.6 5.2-1.6s2.8 1.6 4.8 1.6 2.8-1.6 4.8-1.6 2.2 1.6 5.2 1.6" stroke="#2E6B4F" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg><span data-shara-node="ui-1309" class="shara-236 shara-243 shara-251 shara-256 shara-279">SHARA</span></span>
+        <p data-shara-node="layouts-10059" class="shara-026 shara-088">SHARA — Structured Humanitarian Assistance and Response Alliance</p>
+        <div data-shara-node="layouts-10197" class="shara-026 shara-044 shara-103 shara-116"><button data-shara-node="ui-2605" type="button" class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-195 shara-267 shara-150 shara-165 shara-304 shara-068 shara-210 shara-242 ">ডেভেলপার নিয়ন্ত্রণ</button><a class="shara-047 shara-106 shara-110 shara-114 shara-142 shara-255 shara-293 shara-312 shara-309 shara-295 shara-259 shara-267 shara-304 shara-070 shara-212 shara-247 shara-272 shara-308" href="{% url 'privacy' %}">গোপনীয়তা নীতি</a></div>
+      </div>
+      <nav data-shara-node="layouts-10521" aria-label="ফুটার মেনু" class="shara-045 shara-328"><a data-shara-key="/" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'home' %}">হোম</a><a data-shara-key="/apply" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'apply' %}">সাহায্যের আবেদন</a><a data-shara-key="/map" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'map' %}">বন্যা পরিস্থিতি</a><a data-shara-key="/track" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'track' %}">আবেদন ট্র্যাক করুন</a><a data-shara-key="/volunteer/register" aria-current="page" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-195 shara-267" href="{% url 'volunteer_register' %}">স্বেচ্ছাসেবক নিবন্ধন</a><a data-shara-key="/organization/register" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'organization_register' %}">সংগঠন নিবন্ধন</a><a data-shara-key="/login" class="shara-044 shara-070 shara-096 shara-106 shara-259 shara-145 shara-210 shara-253 shara-272 shara-306" href="{% url 'login' %}">লগইন</a></nav>
+    </div>
+  </footer>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{% static 'volunteer_register/volunteer_register.js' %}" defer></script>{% endblock %}

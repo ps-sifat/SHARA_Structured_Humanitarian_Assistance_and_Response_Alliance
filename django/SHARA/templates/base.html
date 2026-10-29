@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHARA — Structured Humanitarian Assistance and Response Alliance">
+  <title>{% block title %}SHARA{% endblock %}</title>
+  <link rel="icon" href="{% static 'assets/icons/favicon.svg' %}" type="image/svg+xml">
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <!-- All workflows in phase 1 remain browser-local demonstrations. Real submission, authentication, verification, dispatch, and persistence will be integrated in a later phase. -->
+  <div id="shara-app">{% block content %}{% endblock %}</div>
+  <script id="shara-routes" type="application/json">{
+    "pages": [
+      {"name": "home", "path": "/", "url": "{% url 'home' %}"},
+      {"name": "apply", "path": "/apply", "url": "{% url 'apply' %}"},
+      {"name": "map", "path": "/map", "url": "{% url 'map' %}"},
+      {"name": "volunteer_register", "path": "/volunteer/register", "url": "{% url 'volunteer_register' %}"},
+      {"name": "organization_register", "path": "/organization/register", "url": "{% url 'organization_register' %}"},
+      {"name": "login", "path": "/login", "url": "{% url 'login' %}"},
+      {"name": "track", "path": "/track", "url": "{% url 'track' %}"},
+      {"name": "privacy", "path": "/privacy", "url": "{% url 'privacy' %}"},
+      {"name": "access_denied", "path": "/access-denied", "url": "{% url 'access_denied' %}"},
+      {"name": "volunteer_dashboard", "path": "/volunteer", "url": "{% url 'volunteer_dashboard' %}"},
+      {"name": "volunteer_requests", "path": "/volunteer/requests", "url": "{% url 'volunteer_requests' %}"},
+      {"name": "volunteer_profile", "path": "/volunteer/profile/edit", "url": "{% url 'volunteer_profile' %}"},
+      {"name": "volunteer_organizations", "path": "/volunteer/organizations", "url": "{% url 'volunteer_organizations' %}"},
+      {"name": "volunteer_organization", "path": "/volunteer/organization", "url": "{% url 'volunteer_organization' %}"},
+      {"name": "volunteer_team", "path": "/volunteer/team", "url": "{% url 'volunteer_team' %}"},
+      {"name": "volunteer_missions", "path": "/volunteer/missions", "url": "{% url 'volunteer_missions' %}"},
+      {"name": "volunteer_mission_detail", "path": "/volunteer/missions/:id", "url": "{% url 'volunteer_mission_detail' id='__id__' %}"},
+      {"name": "org_dashboard", "path": "/org", "url": "{% url 'org_dashboard' %}"},
+      {"name": "org_memberships", "path": "/org/memberships", "url": "{% url 'org_memberships' %}"},
+      {"name": "org_volunteers", "path": "/org/volunteers", "url": "{% url 'org_volunteers' %}"},
+      {"name": "org_profile", "path": "/org/profile", "url": "{% url 'org_profile' %}"},
+      {"name": "org_teams", "path": "/org/teams", "url": "{% url 'org_teams' %}"},
+      {"name": "org_team_new", "path": "/org/teams/new", "url": "{% url 'org_team_new' %}"},
+      {"name": "org_team_edit", "path": "/org/teams/:id/edit", "url": "{% url 'org_team_edit' id='__id__' %}"},
+      {"name": "org_missions", "path": "/org/missions", "url": "{% url 'org_missions' %}"},
+      {"name": "org_mission_detail", "path": "/org/missions/:id", "url": "{% url 'org_mission_detail' id='__id__' %}"},
+      {"name": "admin_dashboard", "path": "/admin", "url": "{% url 'admin_dashboard' %}"},
+      {"name": "admin_requests", "path": "/admin/requests", "url": "{% url 'admin_requests' %}"},
+      {"name": "admin_request_detail", "path": "/admin/requests/:id", "url": "{% url 'admin_request_detail' id='__id__' %}"},
+      {"name": "admin_missions", "path": "/admin/missions", "url": "{% url 'admin_missions' %}"},
+      {"name": "admin_mission_detail", "path": "/admin/missions/:id", "url": "{% url 'admin_mission_detail' id='__id__' %}"},
+      {"name": "admin_organizations", "path": "/admin/organizations", "url": "{% url 'admin_organizations' %}"},
+      {"name": "admin_teams", "path": "/admin/teams", "url": "{% url 'admin_teams' %}"},
+      {"name": "admin_suppliers", "path": "/admin/suppliers", "url": "{% url 'admin_suppliers' %}"}
+    ]
+  }</script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
