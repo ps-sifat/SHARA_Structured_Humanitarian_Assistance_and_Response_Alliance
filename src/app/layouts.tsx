@@ -20,9 +20,10 @@ import {
   ShieldCheck,
   Users,
 } from "lucide-react"
-import { Alert, Button, Dialog, Logo, Select } from "./ui"
-import { account, type Role } from "./model"
-import { act, getStorageWarning, resetDemo, useDemo } from "./store"
+import { Alert, Button, Dialog, Field, Logo, Select } from "./ui"
+import { type Role } from "./model"
+import { getStorageWarning, resetDemo, useDemo } from "./store"
+import { useAuth } from "./auth"
 
 export const roleNav = {
   volunteer: [
@@ -59,12 +60,6 @@ const publicNav = [
   ["/organization/register", "সংগঠন নিবন্ধন"],
   ["/login", "লগইন"],
 ] as const
-const roleLabels = {
-  volunteer: "স্বেচ্ছাসেবক",
-  org: "সংগঠনের প্রশাসক",
-  admin: "সুপার অ্যাডমিন",
-}
-
 function ScrollTop() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -138,64 +133,26 @@ function NavItems({
 }
 function DemoControl() {
   const { tr } = useLanguage()
-  const s = useDemo(),
-    nav = useNavigate()
-  const [open, setOpen] = useState(false),
-    [reset, setReset] = useState(false)
-  const a = account(s)
+  useDemo()
+  const nav = useNavigate()
+  const [open, setOpen] = useState(false)
+  const [reset, setReset] = useState(false)
   return (
     <>
       <Button size="sm" variant="secondary" onClick={() => setOpen(true)}>
-        {tr("ডেভেলপার নিয়ন্ত্রণ")}</Button>
+        {tr("ডেভেলপমেন্ট নমুনা ডেটা")}</Button>
       <Dialog
         open={open}
         onClose={() => {
           setOpen(false)
           setReset(false)
         }}
-        title={tr("ডেভেলপার নিয়ন্ত্রণ")}
+        title={tr("ডেভেলপমেন্ট নমুনা ডেটা")}
       >
         <div className="space-y-4">
-          <Select
-            aria-label={tr("অ্যাকাউন্ট বদলান")}
-            value={a?.id ?? ""}
-            onChange={(e) => {
-              act({ type: "login", id: e.target.value || null })
-              setOpen(false)
-              const target = s.accounts.find((x) => x.id === e.target.value)
-              nav(
-                target
-                  ? `/${
-                      target.role === "volunteer" ? "volunteer" : target.role
-                    }`
-                  : "/",
-              )
-            }}
-          >
-            <option value="">{tr("পাবলিক ব্যবহারকারী")}</option>
-            {s.accounts.map((x) => (
-              <option key={x.id} value={x.id}>
-                {x.name} — {tr(roleLabels[x.role])}
-              </option>
-            ))}
-          </Select>
-          <details>
-            <summary className="cursor-pointer font-semibold text-forest">
-              {tr("পৃষ্ঠা সূচি")}</summary>
-            <div className="mt-3 grid gap-4 sm:grid-cols-2">
-              <nav>
-                <NavItems items={publicNav} close={() => setOpen(false)} />
-              </nav>
-              {Object.entries(roleNav).map(([role, items]) => (
-                <nav key={role} aria-label={tr(`${role} পৃষ্ঠা সূচি`)}>
-                  <p className="font-semibold">{tr(roleLabels[(role as Role)])}</p>
-                  <NavItems items={items} close={() => setOpen(false)} />
-                </nav>
-              ))}
-            </div>
-            <p className="text-sm">
-              {tr("সঠিক অ্যাকাউন্ট নির্বাচন না করলে সংরক্ষিত পৃষ্ঠায় প্রবেশ করা যাবে না।")}</p>
-          </details>
+          <Alert kind="info">
+            {tr("এই ডেভেলপমেন্ট নিয়ন্ত্রণ শুধু স্থানীয় নমুনা ডেটা রিসেট করে। এটি কোনো অ্যাকাউন্টে লগইন বা পোর্টালের অনুমতি দেয় না।")}
+          </Alert>
           {reset ? (
             <Alert kind="warn" title={tr("সব স্থানীয় পরিবর্তন মুছে যাবে")}>
               <div className="mt-3 flex gap-2">
@@ -224,6 +181,7 @@ function DemoControl() {
 export function PublicLayout() {
   const { tr, language, setLanguage } = useLanguage()
   useDemo()
+  const { pathname } = useLocation()
   const [open, setOpen] = useState(false)
   const [languageOpen, setLanguageOpen] = useState(false)
   return (
@@ -302,6 +260,13 @@ export function PublicLayout() {
       </Dialog>
       <main id="main" className="flex-1">
         {getStorageWarning() && <div className="mx-auto max-w-7xl p-4"><Alert kind="warn">{tr(getStorageWarning())}</Alert></div>}
+        {["/", "/apply", "/map", "/track"].includes(pathname) && (
+          <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6">
+            <Alert kind="warn" title={tr("নমুনা ডেটা")}>
+              {tr("হোমের সারসংক্ষেপ, সাহায্যের আবেদন, মানচিত্র ও ট্র্যাকিং এখনো স্থানীয় নমুনা ডেটা ব্যবহার করে।")}
+            </Alert>
+          </div>
+        )}
         <Outlet />
       </main>
       <footer className="bg-forest text-mint">
@@ -312,7 +277,7 @@ export function PublicLayout() {
               SHARA — Structured Humanitarian Assistance and Response Alliance
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <DemoControl />
+              {import.meta.env.DEV && <DemoControl />}
               <Button
                 to="/privacy"
                 variant="ghost"
@@ -331,20 +296,50 @@ export function PublicLayout() {
 }
 export function DashLayout({ role }: { role: Role }) {
   const { tr } = useLanguage()
-  const s = useDemo(),
-    a = account(s),
-    location = useLocation()
-  if (!a)
+  useDemo()
+  const { user, status, error, logout, activeOrganizationId, selectOrganization, refreshUser } = useAuth()
+  const location = useLocation()
+  const nav = useNavigate()
+  if (status === "loading") return <div className="p-8"><Alert>{tr("অ্যাকাউন্ট যাচাই করা হচ্ছে…")}</Alert></div>
+  if (status === "error")
+    return (
+      <div className="mx-auto max-w-2xl p-8">
+        <Alert kind="error" title={tr("সার্ভারে সংযোগ করা যায়নি")}>{tr(error)}</Alert>
+        <Button className="mt-4" onClick={() => refreshUser().catch(() => {})}>{tr("আবার চেষ্টা করুন")}</Button>
+      </div>
+    )
+  if (!user)
     return (
       <Navigate
         to={`/login?next=${encodeURIComponent(location.pathname + location.search)}`}
         replace
       />
     )
-  if (a.role !== role) return <Navigate to="/access-denied" replace />
-  const org = s.organizations.find((o) => o.id === a.orgId)
-  const pending = role === "org" && org?.verification !== "verified"
+  const allowed = role === "admin"
+    ? user.is_super_admin
+    : role === "org"
+      ? user.organizations.length > 0
+      : user.is_volunteer
+  if (!allowed) return <Navigate to="/access-denied" replace />
+  if (role === "org" && !user.organizations.some((organization) => organization.id === activeOrganizationId)) {
+    const firstOrganizationId = user.organizations[0]?.id
+    if (firstOrganizationId) selectOrganization(firstOrganizationId)
+  }
+  const displayRole = role === "admin" ? "সুপার অ্যাডমিন" : role === "org" ? "সংগঠনের প্রশাসক" : "স্বেচ্ছাসেবক"
   const pathname = location.pathname.replace(/\/+$/, "") || "/"
+  const livePaths = [
+    "/volunteer", "/volunteer/profile/edit", "/volunteer/organizations", "/volunteer/organization",
+    "/org", "/org/memberships", "/org/volunteers", "/org/profile", "/admin/organizations",
+  ]
+  const isLivePage = livePaths.includes(pathname)
+  const handleLogout = async () => {
+    try {
+      await logout()
+      nav("/", { replace: true })
+    } catch {
+      // Keep the current page and session state visible when the server is unreachable.
+    }
+  }
   return (
     <div className="min-h-screen bg-paper lg:grid lg:grid-cols-[250px_1fr]">
       <ScrollTop />
@@ -357,27 +352,44 @@ export function DashLayout({ role }: { role: Role }) {
             <LanguageSwitcher />
           </div>
           <div className="lg:mt-5">
-            <p className="text-sm">{tr(roleLabels[role])}</p>
-            <p className="font-semibold text-white">{a.name}</p>
+            <p className="text-sm">{tr(displayRole)}</p>
+            <p className="font-semibold text-white">{user.name}</p>
           </div>
+          {role === "org" && user.organizations.length > 1 && (
+            <div className="mt-4">
+              <Field label={tr("সংগঠন কর্মক্ষেত্র")} htmlFor="active-organization">
+                <Select
+                  id="active-organization"
+                  value={String(activeOrganizationId ?? "")}
+                  onChange={(event) => selectOrganization(Number(event.target.value))}
+                >
+                  {user.organizations.map((organization) => (
+                    <option key={organization.id} value={organization.id}>{organization.name}</option>
+                  ))}
+                </Select>
+              </Field>
+            </div>
+          )}
         </div>
         <nav
           aria-label={tr("ড্যাশবোর্ড মেনু")}
           className="flex gap-1 overflow-x-auto px-3 pb-3 lg:flex-col"
         >
           <NavItems
-            items={
-              pending
-                ? roleNav.org.filter(
-                    ([to]) => to === "/org" || to === "/org/profile",
-                  )
-                : roleNav[role]
-            }
+            items={roleNav[role]}
             dark
           />
         </nav>
         <div className="flex flex-wrap gap-3 border-t border-white/20 p-4 lg:mt-6">
-          <DemoControl />
+          {user.workspaces.length > 1 && (
+            <Button to="/workspaces" variant="ghost" className="text-mint hover:text-forest">
+              {tr("কর্মক্ষেত্র বদলান")}
+            </Button>
+          )}
+          <Button to="/account/password" variant="ghost" className="text-mint hover:text-forest">
+            {tr("পাসওয়ার্ড পরিবর্তন")}
+          </Button>
+          {import.meta.env.DEV && <DemoControl />}
           <Button
             to="/"
             variant="ghost"
@@ -387,7 +399,7 @@ export function DashLayout({ role }: { role: Role }) {
           <Button
             variant="ghost"
             className="text-mint hover:text-forest"
-            onClick={() => act({ type: "login", id: null })}
+            onClick={handleLogout}
           >
             {tr("লগআউট")}</Button>
         </div>
@@ -396,14 +408,14 @@ export function DashLayout({ role }: { role: Role }) {
         {getStorageWarning() && (
           <Alert kind="warn">{tr(getStorageWarning())}</Alert>
         )}
-        {pending && !["/org", "/org/profile"].includes(pathname) ? (
-          <Alert kind="warn" title={tr("কার্যক্রমের অনুমতি এখনো সক্রিয় নয়")}>
-            <Button to="/org" variant="secondary">
-              {tr("নিবন্ধনের অবস্থা দেখুন")}</Button>
-          </Alert>
-        ) : (
-          <Outlet />
+        {!isLivePage && (
+          <div className="mb-5">
+            <Alert kind="warn" title={tr("নমুনা ডেটা")}>
+              {tr("এই অনুরোধ, দল, কার্যক্রম ও সরবরাহকারী অংশগুলো এখনো স্থানীয় নমুনা ডেটা ব্যবহার করে। প্রোফাইল, সংগঠন নিবন্ধন, যাচাই ও সদস্যপদের তথ্য ডাটাবেস থেকে আসে।")}
+            </Alert>
+          </div>
         )}
+        <Outlet />
       </main>
     </div>
   )

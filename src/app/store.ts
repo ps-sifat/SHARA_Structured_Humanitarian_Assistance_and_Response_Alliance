@@ -20,8 +20,13 @@ function readState(): DemoState {
           "volunteers",
           "suppliers",
         ].every((key) => Array.isArray(parsed[key]))
-      )
+      ) {
+        // The legacy demo store may contain a mock account selection. Never persist or
+        // restore it as an application session; Django owns real authentication.
+        parsed.sessionId = null
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(parsed))
         return parsed
+      }
       storageWarning = "সংরক্ষিত তথ্যের সংস্করণ বদলেছে; প্রাথমিক তথ্য ব্যবহার হচ্ছে।"
     }
   } catch {
@@ -33,7 +38,7 @@ function readState(): DemoState {
 let state = readState()
 const listeners = new Set<() => void>()
 const publish = (next: DemoState) => {
-  state = next
+  state = { ...next, sessionId: null }
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
   } catch {

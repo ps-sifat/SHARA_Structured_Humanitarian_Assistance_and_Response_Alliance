@@ -3,28 +3,32 @@ import { DashLayout, PublicLayout } from "./layouts"
 import Home from "./Home"
 import Apply from "./Apply"
 import MapPage from "./MapPage"
+import { MyTeam } from "./Volunteer"
 import {
-  Teams,
-  VolunteerDashboard,
-  VolunteerProfileEdit,
-  VolunteerRegister,
-  MyOrganization,
-  MyTeam,
-} from "./Volunteer"
-import Org, { OrganizationRegister } from "./Org"
+  VolunteerFormPage,
+  VolunteerDashboardPage,
+  VolunteerOrganizationPage,
+  OrganizationDiscoveryPage,
+} from "./VolunteerPages"
 import {
-  AdminDashboard,
+  OrganizationRegistrationPage,
+  OrganizationStatusPage,
+  OrganizationDashboardPage,
+  OrganizationMembershipsPage,
+  OrganizationProfilePage,
+  AdminDashboardPage,
+  AdminOrganizationReviewPage,
+} from "./OrganizationPages"
+import {
   RequestQueue,
   RequestDetail,
   Suppliers,
-  OrganizationsReview,
 } from "./Admin"
 import HelpRequests from "./HelpRequests"
-import { AccessDenied, DemoLogin, Privacy, Tracking } from "./PublicFlow"
+import { AccessDenied, Privacy, Tracking } from "./PublicFlow"
+import { LoginPage, PasswordChangePage, WorkspacePicker } from "./AuthPages"
 import { MissionDetail, MissionList } from "./Missions"
 import {
-  OrganizationProfile,
-  OrgMemberships,
   TeamForm,
   TeamList,
 } from "./OrgManagement"
@@ -36,9 +40,12 @@ export const router = createHashRouter([
       { index: true, Component: Home },
       { path: "apply", Component: Apply },
       { path: "map", Component: MapPage },
-      { path: "volunteer/register", Component: VolunteerRegister },
-      { path: "organization/register", Component: OrganizationRegister },
-      { path: "login", Component: DemoLogin },
+      { path: "volunteer/register", element: <VolunteerFormPage registration /> },
+      { path: "organization/register", Component: OrganizationRegistrationPage },
+      { path: "organization/status", Component: OrganizationStatusPage },
+      { path: "workspaces", Component: WorkspacePicker },
+      { path: "account/password", Component: PasswordChangePage },
+      { path: "login", Component: LoginPage },
       { path: "track", Component: Tracking },
       { path: "privacy", Component: Privacy },
       { path: "access-denied", Component: AccessDenied },
@@ -49,11 +56,11 @@ export const router = createHashRouter([
     path: "volunteer",
     element: <DashLayout role="volunteer" />,
     children: [
-      { index: true, Component: VolunteerDashboard },
+      { index: true, Component: VolunteerDashboardPage },
       { path: "requests", Component: HelpRequests },
-      { path: "profile/edit", Component: VolunteerProfileEdit },
-      { path: "organizations", Component: Teams },
-      { path: "organization", Component: MyOrganization },
+      { path: "profile/edit", element: <VolunteerFormPage /> },
+      { path: "organizations", Component: OrganizationDiscoveryPage },
+      { path: "organization", Component: VolunteerOrganizationPage },
       { path: "team", Component: MyTeam },
       {
         path: "teams",
@@ -67,10 +74,10 @@ export const router = createHashRouter([
     path: "org",
     element: <DashLayout role="org" />,
     children: [
-      { index: true, Component: Org },
-      { path: "memberships", Component: OrgMemberships },
-      { path: "volunteers", element: <OrgMemberships volunteersOnly /> },
-      { path: "profile", Component: OrganizationProfile },
+      { index: true, Component: OrganizationDashboardPage },
+      { path: "memberships", Component: OrganizationMembershipsPage },
+      { path: "volunteers", element: <OrganizationMembershipsPage volunteersOnly /> },
+      { path: "profile", Component: OrganizationProfilePage },
       { path: "teams", Component: TeamList },
       { path: "teams/new", Component: TeamForm },
       { path: "teams/:id/edit", Component: TeamForm },
@@ -82,12 +89,12 @@ export const router = createHashRouter([
     path: "admin",
     element: <DashLayout role="admin" />,
     children: [
-      { index: true, Component: AdminDashboard },
+      { index: true, Component: AdminDashboardPage },
       { path: "requests", Component: RequestQueue },
       { path: "requests/:id", Component: RequestDetail },
       { path: "missions", Component: MissionList },
       { path: "missions/:id", Component: MissionDetail },
-      { path: "organizations", Component: OrganizationsReview },
+      { path: "organizations", Component: AdminOrganizationReviewPage },
       { path: "teams", element: <TeamList admin /> },
       { path: "suppliers", Component: Suppliers },
     ],

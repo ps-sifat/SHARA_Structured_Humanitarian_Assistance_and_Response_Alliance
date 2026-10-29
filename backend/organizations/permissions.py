@@ -22,8 +22,6 @@ class IsOrganizationAdmin(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         user = request.user
-        if user.is_superuser:
-            return True
         organization_id = _organization_id(obj)
         return bool(
             organization_id

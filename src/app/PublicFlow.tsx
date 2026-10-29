@@ -1,6 +1,6 @@
 import { useLanguage } from "./i18n"
 import { useState } from "react"
-import { useNavigate, useSearchParams } from "react-router"
+import { useSearchParams } from "react-router"
 import {
   Alert,
   Badge,
@@ -11,68 +11,10 @@ import {
   Input,
   PageHead,
   SectionTitle,
-  Select,
   TextArea,
 } from "./ui"
 import { account, progress, time } from "./model"
 import { act, useDemo } from "./store"
-
-export function DemoLogin() {
-  const { tr } = useLanguage()
-  const s = useDemo(),
-    nav = useNavigate(),
-    [params] = useSearchParams()
-  const [selected, setSelected] = useState(s.sessionId ?? "a-v1")
-  const login = () => {
-    const a = s.accounts.find((x) => x.id === selected)
-    if (!a) return
-    act({ type: "login", id: selected })
-    const root = `/${a.role}`,
-      next = params.get("next") ?? ""
-    nav(next === root || next.startsWith(`${root}/`) ? next : root)
-  }
-  return (
-    <div className="mx-auto max-w-xl px-4 py-12">
-      <PageHead title={tr("লগইন")} sub={tr("একটি অ্যাকাউন্ট বেছে নিন")} />
-      <Card>
-        <form
-          className="space-y-5"
-          onSubmit={(e) => {
-            e.preventDefault()
-            login()
-          }}
-        >
-          <Field label={tr("অ্যাকাউন্ট")} required htmlFor="demo-account">
-            <Select
-              id="demo-account"
-              value={selected}
-              onChange={(e) => setSelected(e.target.value)}
-            >
-              {s.accounts.map((a) => (
-                <option key={a.id} value={a.id}>
-                  {a.name} —{" "}
-                  {tr(a.role === "admin"
-                    ? "সুপার অ্যাডমিন"
-                    : a.role === "org"
-                      ? "সংগঠন প্রশাসক"
-                      : "স্বেচ্ছাসেবক")}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Button type="submit" className="w-full">
-            {tr("প্রবেশ করুন")}</Button>
-          <div className="flex flex-wrap gap-3">
-            <Button to="/volunteer/register" variant="ghost">
-              {tr("স্বেচ্ছাসেবক নিবন্ধন")}</Button>
-            <Button to="/organization/register" variant="ghost">
-              {tr("সংগঠন নিবন্ধন")}</Button>
-          </div>
-        </form>
-      </Card>
-    </div>
-  )
-}
 
 export function Tracking() {
   const { tr } = useLanguage()
