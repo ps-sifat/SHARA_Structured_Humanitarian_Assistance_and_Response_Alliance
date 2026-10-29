@@ -260,10 +260,10 @@ export function PublicLayout() {
       </Dialog>
       <main id="main" className="flex-1">
         {getStorageWarning() && <div className="mx-auto max-w-7xl p-4"><Alert kind="warn">{tr(getStorageWarning())}</Alert></div>}
-        {["/", "/apply", "/map", "/track"].includes(pathname) && (
+        {pathname === "/" && (
           <div className="mx-auto max-w-7xl px-4 pt-4 sm:px-6">
             <Alert kind="warn" title={tr("নমুনা ডেটা")}>
-              {tr("হোমের সারসংক্ষেপ, সাহায্যের আবেদন, মানচিত্র ও ট্র্যাকিং এখনো স্থানীয় নমুনা ডেটা ব্যবহার করে।")}
+              {tr("হোমের সারসংক্ষেপে নমুনা তথ্য আছে। আবেদন, মানচিত্র ও ট্র্যাকিং এখন ডাটাবেসের তথ্য ব্যবহার করে।")}
             </Alert>
           </div>
         )}
@@ -329,9 +329,11 @@ export function DashLayout({ role }: { role: Role }) {
   const pathname = location.pathname.replace(/\/+$/, "") || "/"
   const livePaths = [
     "/volunteer", "/volunteer/profile/edit", "/volunteer/organizations", "/volunteer/organization",
-    "/org", "/org/memberships", "/org/volunteers", "/org/profile", "/admin/organizations",
+    "/volunteer/requests", "/volunteer/team", "/volunteer/missions",
+    "/org", "/org/memberships", "/org/volunteers", "/org/profile", "/org/teams", "/org/missions",
+    "/admin", "/admin/requests", "/admin/missions", "/admin/teams", "/admin/organizations",
   ]
-  const isLivePage = livePaths.includes(pathname)
+  const isLivePage = livePaths.some((path) => pathname === path || (path !== "/" && pathname.startsWith(`${path}/`)))
   const handleLogout = async () => {
     try {
       await logout()

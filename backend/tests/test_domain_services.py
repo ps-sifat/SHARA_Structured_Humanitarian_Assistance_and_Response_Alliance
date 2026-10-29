@@ -3,9 +3,10 @@ from django.test import TestCase
 
 from accounts.models import User, VolunteerProfile
 from help_requests.models import HelpRequest
+from help_requests.models import AssistanceCategory
 from locations.models import District, Upazila
 from missions.models import Mission
-from missions.services import assign_mission_to_team, record_mission_update
+from missions.services import assign_mission_to_team, record_mission_update, transition_mission
 from organizations.models import MembershipRequest, Organization, OrganizationAdmin, OrganizationMembership
 from organizations.services import approve_membership_request, approve_organization_registration
 from teams.models import Team, TeamMembership
@@ -60,9 +61,15 @@ class DomainServiceTests(TestCase):
             contact_phone="01700000888",
             verification_status=HelpRequest.VerificationStatus.VERIFIED,
         )
+        category = AssistanceCategory.objects.create(code="service-food", name_bn="খাদ্য", name_en="Food")
+        request.assistance_categories.add(category)
         mission = Mission.objects.create(help_request=request)
         first_team = Team.objects.create(organization=self.organization, name="First Team")
         second_team = Team.objects.create(organization=self.organization, name="Second Team")
+        for team in (first_team, second_team):
+            team.service_districts.add(self.district)
+            team.service_upazilas.add(self.upazila)
+            team.capabilities.add(category)
         TeamMembership.objects.create(team=first_team, volunteer=self.volunteer, role=TeamMembership.Role.LEADER)
         second_leader = User.objects.create_user(
             phone_number="01700000104", name="Second Volunteer", password="test-password"
@@ -74,6 +81,7 @@ class DomainServiceTests(TestCase):
         TeamMembership.objects.create(team=second_team, volunteer=second_profile, role=TeamMembership.Role.LEADER)
 
         first_assignment = assign_mission_to_team(mission, first_team, self.super_admin)
+        transition_mission(mission, self.super_admin, "fail", "Fictional first team could not continue.")
         next_assignment = assign_mission_to_team(mission, second_team, self.super_admin, "Reassignment")
 
         first_assignment.refresh_from_db()

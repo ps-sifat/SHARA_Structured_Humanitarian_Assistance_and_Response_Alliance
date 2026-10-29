@@ -72,6 +72,7 @@ class MissionUpdate(models.Model):
     mission = models.ForeignKey(Mission, on_delete=models.PROTECT, related_name="updates")
     actor = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="mission_updates")
     status = models.CharField(max_length=24, choices=Mission.Status.choices)
+    action = models.CharField(max_length=32, default="status_change")
     note = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

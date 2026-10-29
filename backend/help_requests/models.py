@@ -10,6 +10,7 @@ def make_request_code():
     return f"SH-{uuid.uuid4().hex[:10].upper()}"
 
 
+# Kept for the import path used by the original migration state.
 def make_tracking_code():
     return uuid.uuid4().hex
 
@@ -47,7 +48,9 @@ class HelpRequest(models.Model):
         LOW = "low", "Low"
 
     request_code = models.CharField(max_length=16, unique=True, default=make_request_code, editable=False)
-    tracking_code = models.CharField(max_length=32, unique=True, default=make_tracking_code, editable=False)
+    tracking_token_hash = models.CharField(max_length=64, blank=True, default="", editable=False)
+    idempotency_key = models.CharField(max_length=128, null=True, blank=True, editable=False)
+    request_fingerprint = models.CharField(max_length=64, blank=True, default="", editable=False)
     submitted_by = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name="help_requests"
     )
@@ -86,6 +89,12 @@ class HelpRequest(models.Model):
         ]
         constraints = [
             models.CheckConstraint(condition=Q(people_affected__gte=1), name="help_req_people_positive"),
+            models.UniqueConstraint(
+                fields=["tracking_token_hash"], condition=~Q(tracking_token_hash=""), name="help_req_token_hash_uniq"
+            ),
+            models.UniqueConstraint(
+                fields=["idempotency_key"], condition=Q(idempotency_key__isnull=False), name="help_req_idem_key_uniq"
+            ),
         ]
 
     def clean(self):
@@ -97,6 +106,36 @@ class HelpRequest(models.Model):
 
     def __str__(self):
         return f"{self.request_code} ({self.verification_status})"
+
+
+class RequestClarification(models.Model):
+    class Status(models.TextChoices):
+        REQUESTED = "requested", "Waiting for applicant"
+        SUBMITTED = "submitted", "Waiting for review"
+        RESOLVED = "resolved", "Resolved"
+
+    help_request = models.ForeignKey(HelpRequest, on_delete=models.CASCADE, related_name="clarifications")
+    requested_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT, related_name="requested_clarifications"
+    )
+    request_note = models.TextField()
+    applicant_message = models.TextField(blank=True)
+    review_note = models.TextField(blank=True)
+    status = models.CharField(max_length=12, choices=Status.choices, default=Status.REQUESTED)
+    submitted_at = models.DateTimeField(null=True, blank=True)
+    reviewed_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name="reviewed_clarifications"
+    )
+    reviewed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["created_at", "id"]
+        indexes = [models.Index(fields=["help_request", "status"], name="help_clarify_req_status_idx")]
+
+    def __str__(self):
+        return f"Clarification for {self.help_request.request_code} ({self.status})"
 
 
 class HelpRequestCategory(models.Model):

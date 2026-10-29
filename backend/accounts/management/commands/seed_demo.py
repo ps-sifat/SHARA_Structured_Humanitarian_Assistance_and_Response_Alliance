@@ -91,7 +91,6 @@ class Command(BaseCommand):
         direct_request, _ = HelpRequest.objects.get_or_create(
             request_code="SH-DEMO-0001",
             defaults={
-                "tracking_code": "DEMO-TRACK-0001-LOCAL-ONLY",
                 "reporter_type": HelpRequest.ReporterType.DIRECT,
                 "affected_person_name": "Fictional Person A",
                 "contact_phone": "+8801700000011",
@@ -106,7 +105,6 @@ class Command(BaseCommand):
         proxy_request, _ = HelpRequest.objects.get_or_create(
             request_code="SH-DEMO-0002",
             defaults={
-                "tracking_code": "DEMO-TRACK-0002-LOCAL-ONLY",
                 "reporter_type": HelpRequest.ReporterType.PROXY,
                 "affected_person_name": "Fictional Person B",
                 "contact_phone": "+8801700000012",
