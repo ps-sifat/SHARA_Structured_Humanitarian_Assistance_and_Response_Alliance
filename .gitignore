@@ -10,5 +10,6 @@ __pycache__/
 .cache/
 .idea/
 .runtime/
+.vercel/
 *.egg-info/
 government_officer_crawler/output/

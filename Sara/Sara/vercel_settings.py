@@ -1,12 +1,16 @@
 """Vercel test settings. All SQLite and uploaded-file changes are temporary."""
 import os
 import shutil
+import sys
 import tempfile
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
 
 from .settings import *  # noqa: F403
+
+# The crawler is a local library, not an independently deployed HTTP service.
+sys.path.insert(0, str(BASE_DIR.parent / 'government_officer_crawler'))  # noqa: F405
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 if not SECRET_KEY:
