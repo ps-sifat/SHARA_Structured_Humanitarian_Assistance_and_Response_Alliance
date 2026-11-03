@@ -1,4 +1,0 @@
-httpx<1,>=0.28
-beautifulsoup4<5,>=4.12
-pdfplumber<0.12,>=0.11
-truststore<1,>=0.10
