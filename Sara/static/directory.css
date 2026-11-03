@@ -1,0 +1,63 @@
+/* Contact cards: shared by the public directory and contact administration. */
+.ui-contact-list .directory-card {
+  --contact-teal: #087d78;
+  --contact-ink: #10294d;
+  --contact-muted: #607187;
+  --contact-line: #e0e8ef;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--contact-line);
+  border-radius: 22px;
+  background: #fff;
+  color: var(--contact-ink);
+  box-shadow: 0 5px 22px #10294d08;
+  overflow-wrap: anywhere;
+}
+.directory-card svg { width: 22px; height: 22px; flex: 0 0 auto; }
+.directory-card-header { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 12px 18px; align-items: start; }
+.directory-identity { min-width: 0; }
+.ui-contact-list .directory-card .directory-identity h2 { color: var(--contact-ink); font-size: clamp(23px,2.2vw,30px); font-weight: 700; line-height: 1.35; margin: 0; }
+.directory-designation { color: var(--contact-muted); font-size: 15px; line-height: 1.5; margin: 6px 0 0; }
+.directory-category { grid-column: 2; justify-self: end; max-width: 160px; display: inline-flex; border-radius: 8px; padding: 4px 8px; background: #e7f6f4; color: var(--contact-teal); font-size: 12px; font-weight: 600; line-height: 1.5; }
+.directory-context { padding: 14px 0 16px; border-bottom: 1px solid var(--contact-line); margin-bottom: 14px; }
+.directory-context:empty { padding: 0; border: 0; margin: 0 0 20px; }
+.directory-context p { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.6; margin: 6px 0; }
+.directory-context svg { color: var(--contact-muted); margin-top: 2px; }
+.directory-context p + p { color: var(--contact-muted); }
+.directory-context .directory-description { display: block; color: var(--contact-muted); }
+.directory-channels { display: grid; gap: 8px; }
+.directory-channel { display: grid; grid-template-columns: 30px minmax(0,1fr) 44px; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 10px; background: #f4f8fb; }
+.directory-channel-icon { width: 30px; height: 32px; display: grid; place-items: center; background: #e1f4f2; border-radius: 8px; color: var(--contact-teal); }
+.directory-channel-icon svg { width: 17px; height: 17px; }
+.directory-channel-value { min-width: 0; }
+.directory-channel-value > span { display: block; color: var(--contact-muted); font-size: 12px; line-height: 1.4; margin-bottom: 1px; }
+.directory-channel-value a { color: var(--contact-ink); font-size: 16px; font-weight: 500; line-height: 1.4; text-decoration: none; }
+.directory-card button.directory-copy { display: grid; place-items: center; width: 44px; min-height: 44px; padding: 8px; border: 0; border-radius: 10px; background: transparent; color: var(--contact-muted); cursor: pointer; }
+.directory-card button.directory-copy:hover { background: #e1f4f2; color: var(--contact-teal); }
+.directory-copy-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.directory-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 16px; }
+.directory-actions > a { flex: 1 1 150px; display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1.5px solid var(--contact-teal); border-radius: 10px; font-size: 15px; font-weight: 600; text-decoration: none; line-height: 1.5; }
+.directory-actions svg { width: 19px; height: 19px; }
+.directory-actions > .directory-call { background: var(--contact-teal); color: #fff; }
+.directory-actions > .directory-email { background: #fff; color: var(--contact-teal); }
+.directory-actions > .directory-call:hover { background: #05645f; }
+.directory-actions > .directory-email:hover { background: #edf9f7; }
+.directory-card a:focus-visible, .directory-card button:focus-visible { outline: 3px solid var(--contact-teal); outline-offset: 4px; }
+.directory-channel-value a:hover { text-decoration: underline; }
+.directory-details { font-size: 14px; color: var(--contact-muted); padding-bottom: 16px; }
+.directory-details p { margin: 4px 0; }
+.directory-footer { display: grid; gap: 10px; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--contact-line); }
+.directory-source { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
+.directory-source a { display: inline-flex; align-items: center; gap: 9px; color: var(--contact-teal); text-decoration: none; font-size: 14px; font-weight: 600; min-height: 32px; }
+.directory-source > span { color: var(--contact-muted); font-size: 12px; padding-left: 14px; border-left: 1px solid var(--contact-line); }
+.directory-footer small { display: flex; align-items: center; gap: 10px; color: var(--contact-muted); font-size: 12px; line-height: 1.6; }
+.directory-footer small svg { width: 18px; height: 18px; }
+.directory-admin { border-top: 1px solid var(--contact-line); padding-top: 16px; margin-top: 16px; }
+@media (max-width: 600px) {
+  .ui-contact-list .directory-card { padding: 20px; border-radius: 18px; }
+  .directory-card-header { grid-template-columns: minmax(0,1fr); gap: 10px; }
+  .directory-category { grid-column: 1; justify-self: start; max-width: 100%; }
+  .directory-channel { gap: 8px; padding-inline: 8px; }
+  .directory-actions > a { flex-basis: 120px; }
+}

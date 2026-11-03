@@ -1,0 +1,1382 @@
+[
+  [
+    ". সংশোধনের জন্য খসড়ায় রাখা হয়েছে",
+    "Kept as drafts for correction:"
+  ],
+  [
+    "JPEG, PNG বা WebP; সর্বোচ্চ ২০ মেগাপিক্সেল।",
+    "JPEG, PNG or WebP, at most 20 megapixels."
+  ],
+  [
+    "· ব্যস্ত",
+    "Busy"
+  ],
+  [
+    "অকার্যকর ট্র্যাকিং অনুমতি।",
+    "Invalid tracking permission."
+  ],
+  [
+    "অগ্রাধিকার",
+    "Priority"
+  ],
+  [
+    "অজানা",
+    "Unknown"
+  ],
+  [
+    "অনুপলব্ধ",
+    "Unavailable"
+  ],
+  [
+    "অনুমোদন",
+    "Approve"
+  ],
+  [
+    "অনুমোদিত",
+    "Approved"
+  ],
+  [
+    "অনুমোদিত সংগঠন নেই",
+    "No approved organizations"
+  ],
+  [
+    "অন্তত একটি সেবার জেলা বাছুন।",
+    "Select at least one canonical service district."
+  ],
+  [
+    "অন্য সংগঠনের দল",
+    "Team belongs to another organization"
+  ],
+  [
+    "অন্যান্য",
+    "Other"
+  ],
+  [
+    "অন্যের পক্ষে আবেদন",
+    "Apply on behalf of someone else"
+  ],
+  [
+    "অপসারণ",
+    "Remove"
+  ],
+  [
+    "অপেক্ষমাণ",
+    "Pending"
+  ],
+  [
+    "অপেক্ষমাণ আবেদন",
+    "Pending requests"
+  ],
+  [
+    "অপেক্ষমাণ সংগঠন",
+    "Pending organizations"
+  ],
+  [
+    "অফিসের ঠিকানা",
+    "Office address"
+  ],
+  [
+    "অবস্থা",
+    "State"
+  ],
+  [
+    "অবস্থা",
+    "Status"
+  ],
+  [
+    "অবস্থান",
+    "Location"
+  ],
+  [
+    "অবৈধ জেলা।",
+    "Invalid district selection."
+  ],
+  [
+    "অবৈধ বা পুনরাবৃত্ত নির্বাচন।",
+    "Invalid or duplicate selection."
+  ],
+  [
+    "অবৈধ বিভাগ।",
+    "Invalid division."
+  ],
+  [
+    "অযোগ্য সদস্য",
+    "Ineligible team member"
+  ],
+  [
+    "অ্যাকাউন্ট",
+    "Account"
+  ],
+  [
+    "অ্যাকাউন্ট খুঁজে পাওয়া যায়নি।",
+    "Account not found."
+  ],
+  [
+    "অ্যাকাউন্ট নিষ্ক্রিয়",
+    "Account inactive"
+  ],
+  [
+    "অ্যাকাউন্ট নিষ্ক্রিয়।",
+    "Account is inactive."
+  ],
+  [
+    "অ্যাকাউন্ট পুনরুদ্ধার",
+    "Account recovery"
+  ],
+  [
+    "আগে বর্তমান আবেদন প্রত্যাহার বা সংগঠন ত্যাগ করুন।",
+    "Withdraw or leave before applying elsewhere."
+  ],
+  [
+    "আবার পর্যালোচনার আবেদন",
+    "Resubmit for review"
+  ],
+  [
+    "আবেদন ইতোমধ্যে নির্ধারিত বা অপেক্ষমাণ নয়।",
+    "Request is already assigned or is not pending."
+  ],
+  [
+    "আবেদন জমা দিন",
+    "Submit request"
+  ],
+  [
+    "আবেদন ট্র্যাক",
+    "Track request"
+  ],
+  [
+    "আবেদন দেখুন",
+    "Find requests"
+  ],
+  [
+    "আবেদন প্রত্যাখ্যান",
+    "Reject request"
+  ],
+  [
+    "আবেদনে দেওয়া ফোন নম্বর লিখুন।",
+    "Enter the phone number used in your request."
+  ],
+  [
+    "আবেদনের তালিকা",
+    "Request queue"
+  ],
+  [
+    "আবেদনের বিবরণ",
+    "Request detail"
+  ],
+  [
+    "আমার দল",
+    "My team"
+  ],
+  [
+    "আমার প্রোফাইল",
+    "My profile"
+  ],
+  [
+    "আমার সংগঠন",
+    "My organization"
+  ],
+  [
+    "আমার সদস্যতা",
+    "My membership"
+  ],
+  [
+    "আরও ৫০টি দেখুন",
+    "Show 50 more"
+  ],
+  [
+    "আরেকটি আবেদন",
+    "Another request"
+  ],
+  [
+    "আশ্রয়",
+    "Shelter"
+  ],
+  [
+    "আহত ব্যক্তি",
+    "Injured person"
+  ],
+  [
+    "ইউনিয়ন",
+    "Union"
+  ],
+  [
+    "ইউনিয়ন",
+    "Union (optional)"
+  ],
+  [
+    "ইউনিয়ন বাছুন",
+    "Select union (optional)"
+  ],
+  [
+    "ইতিহাস",
+    "History"
+  ],
+  [
+    "ইতোমধ্যে মিশনে",
+    "Already on a mission"
+  ],
+  [
+    "ইমেইল",
+    "Email (optional)"
+  ],
+  [
+    "উচ্চ",
+    "High"
+  ],
+  [
+    "উত্তর দিন",
+    "Respond"
+  ],
+  [
+    "উদ্ধার",
+    "Rescue"
+  ],
+  [
+    "উদ্ধার প্রশিক্ষণ",
+    "Rescue training"
+  ],
+  [
+    "উপজেলা",
+    "Upazila"
+  ],
+  [
+    "উপজেলা বাছুন",
+    "Select upazila"
+  ],
+  [
+    "উপজেলার সাথে ইউনিয়ন মেলেনি।",
+    "Union does not match the upazila."
+  ],
+  [
+    "এই আবেদন আপনার আওতায় নয়।",
+    "Request outside your scope."
+  ],
+  [
+    "এই আবেদন ইতোমধ্যে গৃহীত। আবেদনে দেওয়া ফোন নম্বর দিয়ে খুঁজুন।",
+    "Already received. Track using the phone number in your request."
+  ],
+  [
+    "এই কাজের অনুমতি নেই।",
+    "You cannot perform this action."
+  ],
+  [
+    "এই তথ্য নেই অথবা আপনার জন্য উপলব্ধ নয়।",
+    "This record does not exist or is not available to you."
+  ],
+  [
+    "এই ধাপে কাজটি করা যায় না।",
+    "Action is invalid at this stage."
+  ],
+  [
+    "এই পৃষ্ঠা আপনার ভূমিকার জন্য নয়।",
+    "This portal is for a different role."
+  ],
+  [
+    "এক ঘণ্টার লিংক",
+    "One-hour link"
+  ],
+  [
+    "একটি দল অথবা একজন ব্যক্তি বাছুন।",
+    "Select exactly one team or individual."
+  ],
+  [
+    "একবারের লিংক তৈরি",
+    "Issue reset link"
+  ],
+  [
+    "এখনো দায়িত্ব নেই",
+    "No assignments yet"
+  ],
+  [
+    "এনজিও",
+    "NGO"
+  ],
+  [
+    "ওষুধ",
+    "Medicine"
+  ],
+  [
+    "কপি",
+    "Copy"
+  ],
+  [
+    "কাজটি সম্পন্ন হয়নি। পরে আবার চেষ্টা করুন।",
+    "The action could not be completed. Please try again later."
+  ],
+  [
+    "কারণ",
+    "Reason"
+  ],
+  [
+    "কারণ",
+    "Reason (required to reject)"
+  ],
+  [
+    "কারণ আবশ্যক।",
+    "A reason is required."
+  ],
+  [
+    "কার্ডের যেকোনো তথ্য",
+    "Any detail on the card"
+  ],
+  [
+    "কী সহায়তা প্রয়োজন",
+    "Assistance needed"
+  ],
+  [
+    "কেউ আটকা",
+    "Someone trapped"
+  ],
+  [
+    "খসড়া",
+    "Draft"
+  ],
+  [
+    "খাদ্য",
+    "Food"
+  ],
+  [
+    "খালি দল",
+    "Empty team"
+  ],
+  [
+    "খুঁজুন",
+    "Search"
+  ],
+  [
+    "গুরুতর চিকিৎসা জরুরি",
+    "Critical medical emergency"
+  ],
+  [
+    "গৃহীত",
+    "Accepted"
+  ],
+  [
+    "গোপনীয়তা",
+    "Privacy"
+  ],
+  [
+    "গ্রহণ",
+    "Accept"
+  ],
+  [
+    "গ্রাম",
+    "Village (optional)"
+  ],
+  [
+    "চলমান",
+    "In progress"
+  ],
+  [
+    "চেনা স্থান",
+    "Landmark (optional)"
+  ],
+  [
+    "ছবি",
+    "Photo (optional)"
+  ],
+  [
+    "ছবিটি বড়। সর্বোচ্চ ৫ MB।",
+    "Image too large; maximum 5 MB."
+  ],
+  [
+    "জরুরি",
+    "Critical"
+  ],
+  [
+    "জরুরি পরিস্থিতি",
+    "Emergency description (optional)"
+  ],
+  [
+    "জেলা",
+    "District"
+  ],
+  [
+    "জেলা বাছুন",
+    "Select district"
+  ],
+  [
+    "জেলার সাথে উপজেলা মেলেনি।",
+    "Upazila does not match the district."
+  ],
+  [
+    "ট্র্যাক",
+    "Track"
+  ],
+  [
+    "ট্র্যাকিং তথ্য আবার দিন।",
+    "Enter tracking credentials again."
+  ],
+  [
+    "ঠিকানা",
+    "Address"
+  ],
+  [
+    "ঠিকানা (ঐচ্ছিক)",
+    "Address (optional)"
+  ],
+  [
+    "ঠিকানার জন্য জেলা ও উপজেলা বাছুন।",
+    "Select both district and upazila for an address."
+  ],
+  [
+    "ড্যাশবোর্ড",
+    "Dashboard"
+  ],
+  [
+    "তথ্য ইতোমধ্যে বদলেছে বা ব্যবহৃত হয়েছে। আবার চেষ্টা করুন।",
+    "The record changed or is already in use. Refresh and try again."
+  ],
+  [
+    "তথ্য সংশোধন করুন",
+    "Please correct the form"
+  ],
+  [
+    "তালিকা থেকে বাছুন অথবা নিজে লিখুন।",
+    "Choose a listed union or enter a name, not both."
+  ],
+  [
+    "তালিকায় না থাকলে ইউনিয়ন বা ওয়ার্ড",
+    "Union or ward if not listed (optional)"
+  ],
+  [
+    "তাৎক্ষণিক উদ্ধার প্রয়োজন",
+    "Immediate rescue required"
+  ],
+  [
+    "ত্যাগ করেছেন",
+    "Left"
+  ],
+  [
+    "দক্ষতা",
+    "Skills (optional)"
+  ],
+  [
+    "দল",
+    "Team"
+  ],
+  [
+    "দল",
+    "Teams"
+  ],
+  [
+    "দল অথবা ব্যক্তি",
+    "Team or individual"
+  ],
+  [
+    "দল ইতোমধ্যে মিশনে",
+    "Team already on a mission"
+  ],
+  [
+    "দল ও সদস্য",
+    "Team and members"
+  ],
+  [
+    "দল ত্যাগ",
+    "Leave team"
+  ],
+  [
+    "দল নেই",
+    "No teams"
+  ],
+  [
+    "দল সম্পাদনা",
+    "Edit team"
+  ],
+  [
+    "দলনেতা",
+    "Team leader"
+  ],
+  [
+    "দলে সদস্য নেই",
+    "Team is empty"
+  ],
+  [
+    "দলের জেলা সংগঠনের এলাকার মধ্যে হতে হবে।",
+    "Team districts must be within organization coverage."
+  ],
+  [
+    "দলের নাম",
+    "Team name"
+  ],
+  [
+    "দায়িত্ব",
+    "Target"
+  ],
+  [
+    "দায়িত্ব",
+    "Workload"
+  ],
+  [
+    "দেওয়া সহায়তা",
+    "Delivered assistance (optional)"
+  ],
+  [
+    "দেখানো হয়েছে",
+    "Showing"
+  ],
+  [
+    "ধরন",
+    "Category"
+  ],
+  [
+    "ধরন",
+    "Type"
+  ],
+  [
+    "নতুন দল",
+    "New team"
+  ],
+  [
+    "নতুন দলের সদস্য ও নেতা আবশ্যক।",
+    "A new team needs members and a leader."
+  ],
+  [
+    "নতুন নেতা",
+    "Leader replacement"
+  ],
+  [
+    "নতুন নেতার অপেক্ষায়",
+    "Awaiting replacement leader"
+  ],
+  [
+    "নতুন পাসওয়ার্ড",
+    "Set password"
+  ],
+  [
+    "নতুন পাসওয়ার্ড সংরক্ষণ",
+    "Set new password"
+  ],
+  [
+    "নতুন যোগাযোগ",
+    "New contact"
+  ],
+  [
+    "নিজ সংগঠনের অনুমোদিত সদস্য নন",
+    "Not an approved member of your organization"
+  ],
+  [
+    "নির্ধারণ",
+    "Assign"
+  ],
+  [
+    "নির্ধারিত",
+    "Assigned"
+  ],
+  [
+    "নেতা",
+    "Leader:"
+  ],
+  [
+    "নেতা নিযুক্ত করুন",
+    "Appoint leader"
+  ],
+  [
+    "নেতা প্রয়োজন",
+    "Leader needed"
+  ],
+  [
+    "নেতাকে নির্বাচিত সদস্য হতে হবে।",
+    "The leader must be a selected member."
+  ],
+  [
+    "নোট",
+    "Notes (optional)"
+  ],
+  [
+    "পদবি",
+    "Designation (optional)"
+  ],
+  [
+    "পরিচয়",
+    "Identity"
+  ],
+  [
+    "পরিবর্তন",
+    "Change"
+  ],
+  [
+    "পরিবর্তনের কারণ",
+    "Override reason (required for override)"
+  ],
+  [
+    "পরিবর্তনের কারণ",
+    "Override reason:"
+  ],
+  [
+    "পরিবহন",
+    "Logistics"
+  ],
+  [
+    "পাওয়া যায়নি",
+    "Not found"
+  ],
+  [
+    "পানি",
+    "Water"
+  ],
+  [
+    "পাসওয়ার্ড",
+    "Password"
+  ],
+  [
+    "পাসওয়ার্ড নিশ্চিত করুন",
+    "Confirm password"
+  ],
+  [
+    "পাসওয়ার্ড পরিবর্তন",
+    "Change password"
+  ],
+  [
+    "পাসওয়ার্ড ভুলে গেছেন",
+    "Forgot password?"
+  ],
+  [
+    "পাসওয়ার্ড মেলেনি।",
+    "Passwords do not match."
+  ],
+  [
+    "পূর্ণ নাম",
+    "Full name"
+  ],
+  [
+    "প্রকাশ",
+    "Publish"
+  ],
+  [
+    "প্রকাশ করুন",
+    "Publish"
+  ],
+  [
+    "প্রকাশিত",
+    "Published"
+  ],
+  [
+    "প্রকাশিত",
+    "Published:"
+  ],
+  [
+    "প্রকাশের আগে ফোন বা ইমেইল দিন।",
+    "A phone or email is required to publish."
+  ],
+  [
+    "প্রতিবেদকের নাম",
+    "Reporter name (optional)"
+  ],
+  [
+    "প্রতিবেদকের ফোন",
+    "Reporter phone (optional)"
+  ],
+  [
+    "প্রতিষ্ঠান",
+    "Institution"
+  ],
+  [
+    "প্রতিষ্ঠান",
+    "Institution (optional)"
+  ],
+  [
+    "প্রত্যাখ্যাত",
+    "Rejected"
+  ],
+  [
+    "প্রত্যাখ্যান",
+    "Reject"
+  ],
+  [
+    "প্রত্যাখ্যানের কারণ",
+    "Rejection reason"
+  ],
+  [
+    "প্রত্যাখ্যানের কারণ আবশ্যক।",
+    "A rejection reason is required."
+  ],
+  [
+    "প্রত্যাহার",
+    "Withdraw"
+  ],
+  [
+    "প্রবেশাধিকার নেই",
+    "Access denied"
+  ],
+  [
+    "প্রশাসকের অ্যাকাউন্ট",
+    "Administrator account"
+  ],
+  [
+    "প্রশাসন",
+    "Administration"
+  ],
+  [
+    "প্রশ্ন আবশ্যক।",
+    "A question is required."
+  ],
+  [
+    "প্রশ্ন পাঠান",
+    "Ask"
+  ],
+  [
+    "প্রস্তাবিত",
+    "Suggested:"
+  ],
+  [
+    "প্রস্তাবিত মানে ফিরুন",
+    "Restore suggested"
+  ],
+  [
+    "প্রস্তুত",
+    "Available"
+  ],
+  [
+    "প্রস্তুত",
+    "Ready"
+  ],
+  [
+    "প্রস্তুতি",
+    "Readiness"
+  ],
+  [
+    "প্রাথমিক চিকিৎসা",
+    "First aid"
+  ],
+  [
+    "প্রাপ্য",
+    "Available"
+  ],
+  [
+    "প্রাপ্যতা",
+    "Availability"
+  ],
+  [
+    "প্রার্থী নেই",
+    "No candidates"
+  ],
+  [
+    "প্রার্থীর যোগ্যতা",
+    "Candidate eligibility"
+  ],
+  [
+    "প্রোফাইল সম্পাদনা",
+    "Edit profile"
+  ],
+  [
+    "ফর্মটি মেয়াদোত্তীর্ণ। পাতা রিফ্রেশ করুন।",
+    "Form expired. Refresh the page."
+  ],
+  [
+    "ফেনী",
+    "Feni"
+  ],
+  [
+    "ফোন",
+    "Phone"
+  ],
+  [
+    "ফোন",
+    "Phone (optional)"
+  ],
+  [
+    "ফোন অথবা ইমেইল",
+    "Phone or email"
+  ],
+  [
+    "ফোন নম্বর",
+    "Phone number"
+  ],
+  [
+    "ফোন নম্বর দিয়ে আবার খুঁজুন।",
+    "Look up your phone number again."
+  ],
+  [
+    "ফোন বা ইমেইলসহ বৈধ খসড়াগুলো প্রকাশিত হবে। অসম্পূর্ণ যোগাযোগ খসড়ায় থাকবে।",
+    "Valid drafts with a phone or email will be published. Incomplete contacts remain drafts."
+  ],
+  [
+    "বয়স্ক ব্যক্তি বিপদে",
+    "Elderly person in danger"
+  ],
+  [
+    "বর্তমান ছবি সরান",
+    "Remove current photo"
+  ],
+  [
+    "বর্তমান ঠিকানা",
+    "Current address"
+  ],
+  [
+    "বর্তমান লোগো সরান",
+    "Remove current logo"
+  ],
+  [
+    "বাইরে পরিচয় যাচাই সম্পন্ন করেছি",
+    "I have completed identity verification outside this system"
+  ],
+  [
+    "বাছাই",
+    "Filter"
+  ],
+  [
+    "বাতিল",
+    "Cancel"
+  ],
+  [
+    "বাতিল",
+    "Cancelled"
+  ],
+  [
+    "বাতিল/ব্যর্থ হলে কারণ",
+    "Reason (required to cancel or fail)"
+  ],
+  [
+    "বাধা",
+    "Issues encountered (optional)"
+  ],
+  [
+    "বিবরণ",
+    "Description (optional)"
+  ],
+  [
+    "বিভাগ",
+    "Division"
+  ],
+  [
+    "বিরতি",
+    "Paused"
+  ],
+  [
+    "বিশুদ্ধ পানি",
+    "Water"
+  ],
+  [
+    "ব্যক্তি",
+    "Individual"
+  ],
+  [
+    "ব্যক্তি",
+    "Person (optional)"
+  ],
+  [
+    "ব্যক্তিগত তথ্য ছাড়া প্রশ্ন লিখুন",
+    "Clarification question without private contact details"
+  ],
+  [
+    "ব্যর্থ",
+    "Failed"
+  ],
+  [
+    "ব্যর্থ",
+    "Mark failed"
+  ],
+  [
+    "ব্যস্ত",
+    "Busy"
+  ],
+  [
+    "ব্যাখ্যা প্রয়োজন",
+    "Clarification"
+  ],
+  [
+    "ব্যাখ্যা প্রয়োজন",
+    "Clarification needed"
+  ],
+  [
+    "ব্যাখ্যার উত্তর",
+    "Clarification response"
+  ],
+  [
+    "মানুষের পাশে মানুষ",
+    "People helping people"
+  ],
+  [
+    "মানুষের সংখ্যা",
+    "Number of people"
+  ],
+  [
+    "মিশন",
+    "Missions"
+  ],
+  [
+    "মিশন ইতোমধ্যে শেষ হয়েছে।",
+    "Mission already ended."
+  ],
+  [
+    "মিশনে ব্যস্ত",
+    "Busy on mission"
+  ],
+  [
+    "মিশনের বিবরণ",
+    "Mission detail"
+  ],
+  [
+    "মুছুন",
+    "Remove"
+  ],
+  [
+    "যাচাইকৃত অ্যাকাউন্টের ফোন অথবা ইমেইল",
+    "Verified account phone or email"
+  ],
+  [
+    "যাচাইকৃত পুনরুদ্ধার",
+    "Verified account recovery"
+  ],
+  [
+    "যানবাহন আছে",
+    "Vehicle access"
+  ],
+  [
+    "যোগ দেওয়ার আবেদন",
+    "Apply to join"
+  ],
+  [
+    "যোগাযোগ",
+    "Contact"
+  ],
+  [
+    "যোগাযোগ পরিচালনা",
+    "Manage resource contacts"
+  ],
+  [
+    "যোগাযোগ পাওয়া যায়নি",
+    "No matching contacts"
+  ],
+  [
+    "যোগাযোগ সংরক্ষণ",
+    "Save contact"
+  ],
+  [
+    "যোগাযোগের ফোন",
+    "Reachable phone"
+  ],
+  [
+    "যোগ্য",
+    "Eligible"
+  ],
+  [
+    "রান্না",
+    "Cooking"
+  ],
+  [
+    "রেফারেন্স",
+    "Reference:"
+  ],
+  [
+    "লগইন",
+    "Login"
+  ],
+  [
+    "লগইনে ফিরুন",
+    "Back to login"
+  ],
+  [
+    "লুকান",
+    "Hide"
+  ],
+  [
+    "লোগো",
+    "Logo (optional)"
+  ],
+  [
+    "লোড হয়নি। আবার চেষ্টা করুন।",
+    "Could not load contacts. Please try again."
+  ],
+  [
+    "শিরোনাম",
+    "Title"
+  ],
+  [
+    "শিশু বিপদে",
+    "Child in danger"
+  ],
+  [
+    "শুধু দায়িত্বপ্রাপ্ত ব্যক্তি বা বর্তমান নেতা কাজটি করতে পারেন।",
+    "Only the responsible assignee can perform this action."
+  ],
+  [
+    "শুরু",
+    "Start"
+  ],
+  [
+    "শুরু",
+    "Started"
+  ],
+  [
+    "শেষ",
+    "Ended"
+  ],
+  [
+    "সংগঠন",
+    "Organization"
+  ],
+  [
+    "সংগঠন",
+    "Organization (optional)"
+  ],
+  [
+    "সংগঠন খুঁজুন",
+    "Find organizations"
+  ],
+  [
+    "সংগঠন ত্যাগ",
+    "Leave organization"
+  ],
+  [
+    "সংগঠন নিবন্ধন",
+    "Organization registration"
+  ],
+  [
+    "সংগঠন নেই",
+    "No organizations"
+  ],
+  [
+    "সংগঠন পর্যালোচনা",
+    "Organization review"
+  ],
+  [
+    "সংগঠনে যোগ দিন",
+    "Join an organization"
+  ],
+  [
+    "সংগঠনের অনুমোদন প্রয়োজন।",
+    "Organization approval is required."
+  ],
+  [
+    "সংগঠনের অনুমোদন বাকি",
+    "Organization awaiting approval"
+  ],
+  [
+    "সংগঠনের অনুমোদন বাকি।",
+    "Organization not approved."
+  ],
+  [
+    "সংগঠনের অবস্থা",
+    "Organization status"
+  ],
+  [
+    "সংগঠনের ইমেইল",
+    "Organization email (optional)"
+  ],
+  [
+    "সংগঠনের ড্যাশবোর্ড",
+    "Organization dashboard"
+  ],
+  [
+    "সংগঠনের নাম",
+    "Organization name"
+  ],
+  [
+    "সংগঠনের প্রশাসক",
+    "Organization admin"
+  ],
+  [
+    "সংগঠনের প্রোফাইল",
+    "Organization profile"
+  ],
+  [
+    "সংগঠনের ফোন",
+    "Organization phone"
+  ],
+  [
+    "সংরক্ষণ",
+    "Save"
+  ],
+  [
+    "সংরক্ষিত হয়েছে।",
+    "Saved successfully."
+  ],
+  [
+    "সক্রিয়",
+    "Active"
+  ],
+  [
+    "সক্রিয় দল নেই",
+    "No active team"
+  ],
+  [
+    "সক্রিয় দলের সদস্যতা নেই।",
+    "No active team membership."
+  ],
+  [
+    "সক্রিয় দায়িত্ব",
+    "Active assignments"
+  ],
+  [
+    "সক্রিয় মিশন",
+    "Active missions"
+  ],
+  [
+    "সক্রিয় মিশন",
+    "Busy"
+  ],
+  [
+    "সক্রিয় মিশন নেই",
+    "No active mission"
+  ],
+  [
+    "সক্রিয় মিশনে শুধু জেলা ও সক্ষমতা স্থির।",
+    "Coverage and capabilities are locked during an active mission."
+  ],
+  [
+    "সক্রিয় মিশনে স্থির",
+    "Locked during active mission"
+  ],
+  [
+    "সক্ষমতা ও সেবার জেলা",
+    "Capabilities and service districts"
+  ],
+  [
+    "সক্ষমতা নেই",
+    "Missing"
+  ],
+  [
+    "সঠিক অগ্রাধিকার ও কারণ দিন।",
+    "Supply a valid priority and reason."
+  ],
+  [
+    "সঠিক ফোন নম্বর দিন।",
+    "Enter a valid phone number."
+  ],
+  [
+    "সদস্য",
+    "Members"
+  ],
+  [
+    "সদস্য নেই",
+    "No members to show"
+  ],
+  [
+    "সদস্য ব্যস্ত",
+    "Member is busy"
+  ],
+  [
+    "সদস্যতা নেই",
+    "None"
+  ],
+  [
+    "সদস্যতার আবেদন",
+    "Membership applications"
+  ],
+  [
+    "সব",
+    "All"
+  ],
+  [
+    "সব চাহিদা পূরণের নিশ্চিতকরণ আবশ্যক।",
+    "Confirm all needs were fulfilled."
+  ],
+  [
+    "সব প্রয়োজন পূরণ করেছি; আবেদন বন্ধ হবে",
+    "All needs fulfilled; close request"
+  ],
+  [
+    "সব প্রয়োজন পূর্ণ",
+    "Complete all needs"
+  ],
+  [
+    "সব যোগাযোগ প্রকাশ",
+    "Publish all contacts"
+  ],
+  [
+    "সব যোগাযোগ প্রকাশ করুন",
+    "Publish all contacts"
+  ],
+  [
+    "সময়",
+    "Hours (optional)"
+  ],
+  [
+    "সমাপনী বিবরণ",
+    "Completion debrief (optional)"
+  ],
+  [
+    "সম্পন্ন",
+    "Completed"
+  ],
+  [
+    "সম্পর্ক",
+    "Relationship (optional)"
+  ],
+  [
+    "সম্পাদনা",
+    "Edit"
+  ],
+  [
+    "সরকারি কর্মকর্তা",
+    "Government official"
+  ],
+  [
+    "সরানো হয়েছে",
+    "Removed"
+  ],
+  [
+    "সহায়তা",
+    "Need"
+  ],
+  [
+    "সহায়তা ও যোগাযোগ",
+    "Assistance and contact"
+  ],
+  [
+    "সহায়তা দেওয়ার সক্ষমতা",
+    "Assistance capabilities"
+  ],
+  [
+    "সহায়তা নিন",
+    "Get support"
+  ],
+  [
+    "সহায়তা সক্ষমতা",
+    "Assistance capabilities"
+  ],
+  [
+    "সহায়তার যোগাযোগ",
+    "Resource contacts"
+  ],
+  [
+    "সাঁতার জানি",
+    "Can swim"
+  ],
+  [
+    "সাধারণ",
+    "Normal"
+  ],
+  [
+    "সার্ভারের সমস্যা",
+    "Server error"
+  ],
+  [
+    "সাহায্যপ্রার্থীর নাম",
+    "Affected person name (optional)"
+  ],
+  [
+    "সাহায্যের আবেদন",
+    "Help requests"
+  ],
+  [
+    "সাহায্যের আবেদন",
+    "Request help"
+  ],
+  [
+    "সিলেট",
+    "Sylhet"
+  ],
+  [
+    "সীমিত",
+    "Limited"
+  ],
+  [
+    "সুপার অ্যাডমিন",
+    "Super admin"
+  ],
+  [
+    "সেবা",
+    "Services (optional)"
+  ],
+  [
+    "সেবা সরবরাহকারী",
+    "Resource supplier"
+  ],
+  [
+    "সেবার জেলা",
+    "Service districts"
+  ],
+  [
+    "সেবার জেলার বাইরে",
+    "Outside service district"
+  ],
+  [
+    "স্থানীয় দিকনির্দেশনা",
+    "Local directions"
+  ],
+  [
+    "স্থানীয় দিকনির্দেশনা",
+    "Local directions (optional)"
+  ],
+  [
+    "স্বেচ্ছাসেবক",
+    "Volunteer"
+  ],
+  [
+    "স্বেচ্ছাসেবক",
+    "Volunteer dashboard"
+  ],
+  [
+    "স্বেচ্ছাসেবক অনুপলব্ধ বা সীমিত",
+    "Volunteer unavailable or limited"
+  ],
+  [
+    "স্বেচ্ছাসেবক নিবন্ধন",
+    "Volunteer registration"
+  ],
+  [
+    "স্বেচ্ছাসেবা",
+    "Volunteering"
+  ],
+  [
+    "স্বেচ্ছাসেবী",
+    "Volunteer organization"
+  ],
+  [
+    "হোম",
+    "Home"
+  ],
+  [
+    "এটি আবশ্যক।",
+    "This field is required."
+  ],
+  [
+    "একটি বৈধ ইমেইল ঠিকানা লিখুন.",
+    "Enter a valid email address."
+  ],
+  [
+    "বৈধ URL দিন",
+    "Enter a valid URL."
+  ],
+  [
+    "একটি পূর্ণসংখ্যা দিন",
+    "Enter a whole number."
+  ],
+  [
+    "একটি সংখ্যা প্রবেশ করান।",
+    "Enter a number."
+  ],
+  [
+    "একটি বৈধ মান দিন।",
+    "Enter a valid value."
+  ],
+  [
+    "এটি বৈধ নয়। অনুগ্রহ করে আরেকটি সিলেক্ট করুন।",
+    "Select a valid choice. That choice is not one of the available choices."
+  ],
+  [
+    "কয়েকটি মানের তালিকা দিন।",
+    "Enter a list of values."
+  ],
+  [
+    "পাসওয়ার্ড",
+    "Password"
+  ],
+  [
+    "পাসওয়ার্ড নিশ্চিত করুন",
+    "Password confirmation"
+  ],
+  [
+    "পাসওয়ার্ড দুটো মেলেনি।",
+    "The two password fields didn't match."
+  ],
+  [
+    "আপনার পুরনো পাসওয়ার্ড ঠিকভাবে প্রবেশ করানো হয়নি। অনুগ্রহপূর্বক সঠিক পাসওয়ার্ড দিন।",
+    "Your old password was entered incorrectly. Please enter it again."
+  ],
+  [
+    "পুরনো পাসওয়ার্ড",
+    "Old password"
+  ],
+  [
+    "নতুন পাসওয়ার্ড",
+    "New password"
+  ],
+  [
+    "নতুন পাসওয়ার্ড নিশ্চিতকরণ",
+    "New password confirmation"
+  ]
+]

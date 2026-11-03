@@ -1,0 +1,221 @@
+/* Django administration uses its own templates; these tokens match the SHARA interface. */
+html[data-theme='light'],
+:root {
+  --primary: #175c45;
+  --secondary: #175c45;
+  --accent: #d9ecdf;
+  --primary-fg: #fff;
+  --body-fg: #183b30;
+  --body-bg: #f7faf7;
+  --body-quiet-color: #50675a;
+  --body-medium-color: #38584a;
+  --body-loud-color: #12372a;
+  --header-color: #e7f3eb;
+  --header-branding-color: #fff;
+  --header-bg: #123c2e;
+  --header-link-color: #fff;
+  --breadcrumbs-fg: #d5ebdd;
+  --breadcrumbs-link-fg: #fff;
+  --breadcrumbs-bg: #1d5942;
+  --link-fg: #175c45;
+  --link-hover-color: #0b422e;
+  --link-selected-fg: #104833;
+  --hairline-color: #d7e4dc;
+  --border-color: #9db2a4;
+  --darkened-bg: #edf4ef;
+  --selected-bg: #e1eee5;
+  --selected-row: #e2f1e8;
+  --button-bg: #175c45;
+  --button-hover-bg: #104833;
+  --default-button-bg: #124b37;
+  --default-button-hover-bg: #0d3e2d;
+  --object-tools-bg: #2d664e;
+  --object-tools-hover-bg: #174b36;
+  --shara-field-surface: #fbfdfb;
+}
+
+/* Respect Django's auto and explicit dark-mode choices. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) {
+    --primary: #245a44;
+    --secondary: #286c50;
+    --accent: #d2e8d7;
+    --primary-fg: #fff;
+    --body-fg: #e6f1e9;
+    --body-bg: #14251b;
+    --body-quiet-color: #c2d6c8;
+    --body-medium-color: #d8e9dc;
+    --body-loud-color: #fff;
+    --header-color: #e7f3eb;
+    --header-branding-color: #fff;
+    --header-bg: #10382c;
+    --header-link-color: #fff;
+    --breadcrumbs-fg: #d3e8d8;
+    --breadcrumbs-link-fg: #fff;
+    --breadcrumbs-bg: #153e30;
+    --link-fg: #a9dbbd;
+    --link-hover-color: #d5f4de;
+    --link-selected-fg: #bde6ca;
+    --hairline-color: #345444;
+    --border-color: #52715d;
+    --darkened-bg: #1c3325;
+    --selected-bg: #223c2c;
+    --selected-row: #234e37;
+    --button-bg: #286c50;
+    --button-hover-bg: #348060;
+    --default-button-bg: #286c50;
+    --default-button-hover-bg: #348060;
+    --object-tools-bg: #365948;
+    --object-tools-hover-bg: #496d59;
+    --shara-field-surface: #1b3023;
+  }
+}
+
+html[data-theme='dark'] {
+  --primary: #245a44;
+  --secondary: #286c50;
+  --accent: #d2e8d7;
+  --primary-fg: #fff;
+  --body-fg: #e6f1e9;
+  --body-bg: #14251b;
+  --body-quiet-color: #c2d6c8;
+  --body-medium-color: #d8e9dc;
+  --body-loud-color: #fff;
+  --header-color: #e7f3eb;
+  --header-branding-color: #fff;
+  --header-bg: #10382c;
+  --header-link-color: #fff;
+  --breadcrumbs-fg: #d3e8d8;
+  --breadcrumbs-link-fg: #fff;
+  --breadcrumbs-bg: #153e30;
+  --link-fg: #a9dbbd;
+  --link-hover-color: #d5f4de;
+  --link-selected-fg: #bde6ca;
+  --hairline-color: #345444;
+  --border-color: #52715d;
+  --darkened-bg: #1c3325;
+  --selected-bg: #223c2c;
+  --selected-row: #234e37;
+  --button-bg: #286c50;
+  --button-hover-bg: #348060;
+  --default-button-bg: #286c50;
+  --default-button-hover-bg: #348060;
+  --object-tools-bg: #365948;
+  --object-tools-hover-bg: #496d59;
+  --shara-field-surface: #1b3023;
+}
+
+#header,
+.login #container,
+.module,
+.inline-group {
+  box-shadow: 0 4px 14px #102d2014;
+}
+
+.button,
+input[type='submit'],
+input[type='button'],
+.submit-row input,
+a.button,
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+select,
+textarea {
+  border-radius: 7px;
+}
+
+:is(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #b3812d;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme='light']) :is(a, button, input, select, textarea):focus-visible {
+    outline-color: #edc56c;
+  }
+}
+
+html[data-theme='dark'] :is(a, button, input, select, textarea):focus-visible {
+  outline-color: #edc56c;
+}
+
+/* A consistent reading scale and gentle feedback for Django's existing controls. */
+#content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  font-size: 1rem;
+}
+
+.form-row label {
+  font-size: 0.9375rem;
+}
+
+:is(input[type='text'], input[type='password'], input[type='email'], input[type='search'], input[type='number'], input[type='url'], input[type='tel'], select, textarea) {
+  background-color: var(--shara-field-surface);
+}
+
+:is(input[type='text'], input[type='password'], input[type='email'], input[type='search'], input[type='number'], input[type='url'], input[type='tel'], select, textarea):disabled {
+  background-color: var(--darkened-bg);
+  color: var(--body-quiet-color);
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  accent-color: var(--secondary);
+}
+
+a:link,
+a:visited,
+button,
+input,
+input[type='submit'],
+input[type='button'],
+.submit-row input,
+a.button,
+select,
+textarea,
+summary,
+.button,
+.module,
+.inline-group,
+.login #container {
+  transition-property: color, background-color, border-color, box-shadow, text-decoration-color, outline-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+@media (hover: hover) {
+  .module:hover,
+  .inline-group:hover,
+  .login #container:hover {
+    box-shadow: 0 6px 18px #102d201c;
+  }
+
+  :is(input[type='text'], input[type='password'], input[type='email'], input[type='search'], input[type='number'], input[type='url'], input[type='tel'], select, textarea):not(:disabled):not([aria-invalid='true']):not(.errors *):hover {
+    border-color: var(--link-fg);
+    box-shadow: 0 2px 8px #102d2014;
+  }
+
+  #nav-sidebar a:hover {
+    background-color: var(--selected-bg);
+  }
+}
+
+.errors :is(input, select, textarea),
+:is(input, select, textarea)[aria-invalid='true'] {
+  border-color: var(--error-fg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(a, button, input, select, textarea, summary, .button, .module, .inline-group, .login #container) {
+    transition: none !important;
+  }
+}

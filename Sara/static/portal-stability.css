@@ -1,0 +1,12 @@
+/* Keep the portal shell stationary between full-page Django navigations. */
+html { scrollbar-gutter: stable; }
+@supports not (scrollbar-gutter: stable) { html { overflow-y: scroll; } }
+.ui-portal { align-items: start; min-height: 100vh; }
+.ui-portal > aside { scrollbar-gutter: stable; }
+.ui-sidebar-menu .ui-menu-link,
+.ui-sidebar-menu .ui-menu-link:hover,
+.ui-sidebar-menu .ui-menu-link[aria-current=page] { transform: none !important; font-weight: 600 !important; }
+.ui-sidebar-brand button[lang] { border: 1px solid transparent !important; min-height: 40px; min-width: 64px; }
+@media (min-width: 901px) {
+ .ui-sidebar-menu .ui-menu-link { display: flex; align-items: center; min-height: 48px; }
+}
