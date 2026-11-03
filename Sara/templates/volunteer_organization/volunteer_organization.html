@@ -1,0 +1,51 @@
+{% extends "shared/page.html" %}{% load static %}
+{% block styles %}{{ block.super }}<link rel="stylesheet" href="{% static 'organization-card.css' %}">{% endblock %}
+{% block page_content %}
+<section class="ui-card membership-card">
+  {% if profile.organization %}
+  <div class="membership-identity">
+    {% include "shared/organization_logo.html" with organization=profile.organization %}
+    <div>
+      <p class="membership-state">{{ profile.get_membership_status_display }}</p>
+      <h2><button type="button" class="organization-name" data-organization-open aria-haspopup="dialog" aria-controls="organization-details">{{ profile.organization.name }}</button></h2>
+      <p class="ui-hint" data-en="Select the name to view organization details.">সংগঠনের বিস্তারিত দেখতে নামের ওপর চাপুন।</p>
+    </div>
+  </div>
+  {% else %}<h2>{{ profile.get_membership_status_display }}</h2>{% endif %}
+  {% if profile.membership_reason %}<p>{{ profile.membership_reason }}</p>{% endif %}
+  {% if profile.membership_status == 'pending' or profile.membership_status == 'approved' %}
+  <p class="membership-notice" data-en="Leaving is immediate. Individual missions continue; leaving as team leader pauses the team's active mission for a replacement.">তাৎক্ষণিক ত্যাগ করা যায়। ব্যক্তিগত মিশন চলবে; নেতা ত্যাগ করলে দলের মিশন নতুন নেতার জন্য থামবে।</p>
+  {% endif %}
+  <div class="membership-actions">
+    {% if profile.membership_status == 'pending' or profile.membership_status == 'approved' %}
+    <form method="post">{% csrf_token %}{{ form.non_field_errors }}
+      {% if profile.membership_status == 'pending' %}<button name="action" value="withdraw" type="submit" class="ui-button" data-confirm>প্রত্যাহার / Withdraw</button>{% else %}<button name="action" value="leave" type="submit" class="ui-button" data-confirm>সংগঠন ত্যাগ / Leave organization</button>{% endif %}
+    </form>
+    {% endif %}
+    <a class="ui-link membership-find" href="{% url 'volunteer_organizations' %}">সংগঠন খুঁজুন / Find organizations</a>
+  </div>
+</section>
+{% if profile.organization %}{% with organization=profile.organization %}
+<dialog id="organization-details" class="organization-dialog" aria-labelledby="organization-details-title">
+  <div class="organization-dialog-top"><p class="ui-eyebrow" data-en="Organization details">সংগঠনের বিস্তারিত</p><button type="button" class="organization-close" data-organization-close aria-label="বন্ধ করুন / Close">×</button></div>
+  <div class="membership-identity">
+    {% include "shared/organization_logo.html" %}
+    <div><h2 id="organization-details-title">{{ organization.name }}</h2><p class="ui-hint">{{ organization.get_organization_type_display }}</p></div>
+  </div>
+  {% if organization.description %}<section class="organization-about"><h3 data-en="About the organization">সংগঠন সম্পর্কে</h3><p>{{ organization.description|linebreaksbr }}</p></section>{% endif %}
+  <dl class="organization-details-grid">
+    <dt data-en="Verification status">অনুমোদনের অবস্থা</dt><dd>{{ organization.get_verification_status_display }}</dd>
+    <dt data-en="Administrator">প্রশাসক</dt><dd>{{ organization.administrator.full_name }}</dd>
+    <dt data-en="Phone">ফোন</dt><dd><a href="tel:{{ organization.contact_phone }}">{{ organization.contact_phone }}</a></dd>
+    {% if organization.contact_email %}<dt data-en="Email">ইমেইল</dt><dd><a href="mailto:{{ organization.contact_email }}">{{ organization.contact_email }}</a></dd>{% endif %}
+    <dt data-en="Office address">অফিসের ঠিকানা</dt><dd>{{ organization.office_location.get_full_address }}</dd>
+    <dt data-en="Service districts">সেবার জেলা</dt><dd>{% for district in organization.operating_districts.all %}<span class="organization-district">{{ district.district }}</span>{% empty %}<span data-en="Not listed">উল্লেখ করা হয়নি</span>{% endfor %}</dd>
+    <dt data-en="Approved members">অনুমোদিত সদস্য</dt><dd>{{ organization_member_count }}</dd>
+    <dt data-en="Teams">দল</dt><dd>{{ organization_team_count }}</dd>
+    <dt data-en="Registered">নিবন্ধিত হয়েছে</dt><dd><time datetime="{{ organization.created_at|date:'c' }}">{{ organization.created_at|date:"d M Y" }}</time></dd>
+    <dt data-en="Updated">সর্বশেষ হালনাগাদ</dt><dd><time datetime="{{ organization.updated_at|date:'c' }}">{{ organization.updated_at|date:"d M Y" }}</time></dd>
+  </dl>
+</dialog>
+{% endwith %}{% endif %}
+{% endblock %}
+{% block scripts %}{{ block.super }}<script src="{% static 'organization-card.js' %}" defer></script>{% endblock %}

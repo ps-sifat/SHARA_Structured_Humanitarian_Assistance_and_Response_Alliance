@@ -1,0 +1,39 @@
+{% extends "shared/page.html" %}
+{% block page_content %}
+<form method="post" class="ui-form ui-card">
+  {% csrf_token %}
+  <p data-en="Enter the phone number used when submitting your request to see your latest and previous requests.">আবেদনে দেওয়া ফোন নম্বর লিখে বর্তমান ও আগের আবেদন দেখুন।</p>
+  {% include "shared/fields.html" %}
+  <button name="action" value="lookup" type="submit" class="ui-button">আবেদন দেখুন / Find requests</button>
+</form>
+{% if response_form.non_field_errors %}<div role="alert">{{ response_form.non_field_errors }}</div>{% endif %}
+{% if searched %}
+<section aria-label="Request history">
+  {% for tracking in records %}
+  {% if forloop.first %}<h2 data-en="Latest request">সর্বশেষ আবেদন</h2>{% elif forloop.counter == 2 %}<h2 data-en="Previous requests">আগের আবেদন</h2>{% endif %}
+  <article class="ui-card">
+    <p><time datetime="{{ tracking.created_at|date:'c' }}">{{ tracking.created_at|date:"d M Y, H:i" }}</time></p>
+    {% include "shared/record.html" with record=tracking %}
+    <h3 data-en="Assignment attempts">দায়িত্বের প্রচেষ্টা</h3>
+    {% for attempt in tracking.attempts %}<p>{{ attempt.number }} · {{ attempt.stage }}</p>{% empty %}<p data-en="Awaiting assignment">দায়িত্ব নির্ধারণের অপেক্ষায়</p>{% endfor %}
+    {% if tracking.question %}
+    <h3 data-en="Clarification">ব্যাখ্যা</h3>
+    <p>{{ tracking.question|linebreaksbr }}</p>
+    {% if tracking.response %}<p>{{ tracking.response|linebreaksbr }}</p>{% endif %}
+    {% if tracking.needs_response %}
+    <form method="post" class="ui-form">
+      {% csrf_token %}
+      <input type="hidden" name="request_id" value="{{ tracking.id }}">
+      {% include "shared/fields.html" with form=tracking.response_form %}
+      <button name="action" value="respond" type="submit" class="ui-button">উত্তর দিন / Respond</button>
+    </form>
+    {% endif %}
+    {% endif %}
+    {% if tracking.rejection_reason %}<h3>প্রত্যাখ্যানের কারণ / Rejection reason</h3><p>{{ tracking.rejection_reason|linebreaksbr }}</p>{% endif %}
+  </article>
+  {% empty %}
+  <div class="ui-card" role="status"><p data-en="No requests found for this phone number. Check the number and try again.">এই ফোন নম্বরে কোনো আবেদন পাওয়া যায়নি। নম্বর যাচাই করে আবার চেষ্টা করুন।</p></div>
+  {% endfor %}
+</section>
+{% endif %}
+{% endblock %}

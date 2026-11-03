@@ -1,0 +1,52 @@
+<article class="ui-card directory-card">
+  <header class="directory-card-header">
+    <div class="directory-identity">
+      <h2>{{ contact.card.name }}</h2>
+      {% if contact.designation %}<p class="directory-designation">{{ contact.designation }}</p>{% endif %}
+    </div>
+    <span class="directory-category">{{ contact.get_contact_category_display }}</span>
+  </header>
+  <div class="directory-context">
+    {% if contact.institution_name %}<p>{% include "shared/contact_icon.html" with icon='building' %}<span>{{ contact.institution_name }}</span></p>{% endif %}
+    {% if contact.card.area %}<p>{% include "shared/contact_icon.html" with icon='location' %}<span>{{ contact.card.area }}</span></p>{% endif %}
+    {% if contact.services_description %}<p class="directory-description">{{ contact.services_description|linebreaksbr }}</p>{% endif %}
+  </div>
+  <div class="directory-channels">
+    {% if contact.phone %}
+    <div class="directory-channel">
+      <span class="directory-channel-icon">{% include "shared/contact_icon.html" with icon='phone' %}</span>
+      <div class="directory-channel-value"><span data-en="Phone">ফোন</span><a href="tel:{{ contact.phone }}" dir="ltr">{{ contact.phone }}</a></div>
+      <button type="button" class="directory-copy" data-copy="{{ contact.phone }}" aria-label="Copy phone number" title="Copy phone number">{% include "shared/contact_icon.html" with icon='copy' %}<span class="directory-copy-status" data-copy-feedback role="status"></span></button>
+    </div>
+    {% endif %}
+    {% if contact.email %}
+    <div class="directory-channel">
+      <span class="directory-channel-icon">{% include "shared/contact_icon.html" with icon='email' %}</span>
+      <div class="directory-channel-value"><span data-en="Email">ইমেইল</span><a href="mailto:{{ contact.email }}" dir="ltr">{{ contact.email }}</a></div>
+      <button type="button" class="directory-copy" data-copy="{{ contact.email }}" aria-label="Copy email address" title="Copy email address">{% include "shared/contact_icon.html" with icon='copy' %}<span class="directory-copy-status" data-copy-feedback role="status"></span></button>
+    </div>
+    {% endif %}
+  </div>
+  <div class="directory-actions">
+    {% if contact.phone %}<a class="directory-call" href="tel:{{ contact.phone }}">{% include "shared/contact_icon.html" with icon='phone' %}<span data-en="Call now">কল করুন</span></a>{% endif %}
+    {% if contact.email %}<a class="directory-email" href="mailto:{{ contact.email }}">{% include "shared/contact_icon.html" with icon='email' %}<span data-en="Send email">ইমেইল করুন</span></a>{% endif %}
+  </div>
+  {% if contact.operating_hours or contact.availability != 'unknown' or contact.card.notes %}
+  <div class="directory-details">
+    {% if contact.availability != 'unknown' %}<p>{{ contact.get_availability_display }}</p>{% endif %}
+    {% if contact.operating_hours %}<p>{{ contact.operating_hours }}</p>{% endif %}
+    {% if contact.card.notes %}<p>{{ contact.card.notes|linebreaksbr }}</p>{% endif %}
+  </div>
+  {% endif %}
+  <footer class="directory-footer">
+    {% if contact.card.source_url %}<div class="directory-source"><a href="{{ contact.card.source_url }}" target="_blank" rel="noopener noreferrer">{% include "shared/contact_icon.html" with icon='external' %}<span data-en="View source">সূত্র দেখুন</span></a><span>{{ contact.card.source_host }}</span></div>{% endif %}
+    <small>{% include "shared/contact_icon.html" with icon='clock' %}<span><span data-en="Updated">সর্বশেষ হালনাগাদ</span> <time datetime="{{ contact.updated_at|date:'c' }}">{{ contact.updated_at|date:"d M Y, H:i" }}</time></span></small>
+  </footer>
+  {% if manage_contacts %}
+  <div class="directory-admin">
+    <p>{% if contact.is_published %}প্রকাশিত / Published{% else %}খসড়া / Draft{% endif %}</p>
+    <a class="ui-link" href="?edit={{ contact.pk }}">সম্পাদনা / Edit</a>
+    <form method="post">{% csrf_token %}<input type="hidden" name="contact" value="{{ contact.pk }}"><div class="ui-actions">{% if contact.is_published %}<button class="ui-button" name="action" value="hide" type="submit">লুকান / Hide</button>{% else %}<button class="ui-button" name="action" value="publish" type="submit">প্রকাশ / Publish</button>{% endif %}<button class="ui-button" name="action" value="remove" type="submit" data-confirm>মুছুন / Remove</button></div></form>
+  </div>
+  {% endif %}
+</article>

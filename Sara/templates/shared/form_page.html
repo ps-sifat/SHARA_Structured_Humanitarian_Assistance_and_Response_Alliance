@@ -1,0 +1,7 @@
+{% extends "shared/page.html" %}{% block page_content %}
+{% if photo %}<img class="ui-avatar" src="{{ photo.url }}" alt="প্রোফাইল / Profile">{% endif %}
+<form method="post" enctype="multipart/form-data" class="ui-form">{% csrf_token %}
+{% if groups %}{% for group in groups %}<fieldset class="ui-card"><legend>{{ group.title }}</legend>{% include "shared/fields.html" with form=group.form %}</fieldset>{% endfor %}
+{% else %}<section class="ui-card">{% include "shared/fields.html" %}</section>{% endif %}
+<button class="ui-button" type="submit"><span data-en="Save and continue">সংরক্ষণ ও পরবর্তী ধাপ</span></button></form>
+{% endblock %}

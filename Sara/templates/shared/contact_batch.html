@@ -1,0 +1,9 @@
+<section data-contact-results aria-label="যোগাযোগ / Contacts">
+<div class="ui-contact-list" data-contact-list>
+{% for contact in contacts %}{% include "shared/contact.html" %}{% empty %}<section class="ui-card ui-empty">যোগাযোগ পাওয়া যায়নি / No matching contacts</section>{% endfor %}
+</div>
+<div class="ui-load-more" data-contact-pagination>
+<p class="ui-hint" role="status" aria-live="polite">দেখানো হয়েছে / Showing <span data-contact-count>{{ contacts|length }}</span> / {{ contacts_total }}</p>
+{% if contacts_next %}<a class="ui-button" href="{{ contacts_next }}" data-contact-more>আরও ৫০টি দেখুন / Show 50 more</a>{% endif %}
+<p class="ui-field-error" data-contact-load-error hidden>লোড হয়নি। আবার চেষ্টা করুন। / Could not load contacts. Please try again.</p>
+</div></section>

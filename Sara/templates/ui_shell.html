@@ -1,0 +1,19 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}{{ title }} · SHARA{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{% static 'home/home.css' %}"><link rel="stylesheet" href="{% static 'ui.css' %}"><link rel="stylesheet" href="{% static 'theme.css' %}"><link rel="stylesheet" href="{% static 'directory.css' %}">{% endblock %}
+{% block content %}<a class="ui-skip" href="#main"><span data-en="Skip to content">মূল বিষয়বস্তুতে যান</span></a>
+{% if user.is_authenticated and '/volunteer/' in request.path and request.resolver_match.url_name != 'volunteer_register' or user.is_authenticated and '/org/' in request.path or user.is_authenticated and '/admin/' in request.path %}
+<div class="ui-portal">{% include "shared/portal_nav.html" %}
+{% else %}<div>{% include "ui_public_nav.html" %}{% endif %}
+<main class="ui-main ui-page-{{ request.resolver_match.url_name }}" id="main">
+{% if messages %}<div role="status" class="ui-messages">{% for message in messages %}<p class="ui-card">{{ message }}</p>{% endfor %}</div>{% endif %}
+{% block ui_content %}{% endblock %}</main></div>
+<footer class="ui-footer"><span>SHARA · <span data-en="People helping people">মানুষের পাশে মানুষ</span></span><nav>
+<a href="{% url 'privacy' %}"><span data-en="Privacy">গোপনীয়তা</span></a>
+<a href="{% url 'home' %}"><span data-en="Home">হোম</span></a>
+{% if user.is_authenticated %}{% include "shared/dashboard_link.html" %}<a href="{% url 'account_settings' %}"><span data-en="Account settings">অ্যাকাউন্ট</span></a>
+<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="ui-button" type="submit"><span data-en="Logout">লগআউট</span></button></form>
+{% else %}<a href="{% url 'volunteer_register' %}"><span data-en="Volunteer registration">স্বেচ্ছাসেবক নিবন্ধন</span></a><a href="{% url 'organization_register' %}"><span data-en="Organization registration">সংগঠন নিবন্ধন</span></a>{% endif %}</nav></footer>
+{% if geography %}{{ geography|json_script:"shara-geography" }}<div hidden data-unions-url="{% url 'geo_locations:unions' %}"></div>{% endif %}
+{% endblock %}{% block scripts %}<script src="{% static 'language.js' %}" data-translations="{% static 'ui-translations.json' %}" defer></script><script src="{% static 'ui.js' %}" defer></script>{% endblock %}
+

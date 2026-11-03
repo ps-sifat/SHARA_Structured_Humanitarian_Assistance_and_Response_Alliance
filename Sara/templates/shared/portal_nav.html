@@ -1,0 +1,29 @@
+{% load portal_ui %}{% portal_language as portal_language_code %}
+<aside><div class="ui-sidebar-brand"><a class="ui-brand" href="{% url 'home' %}">SHARA</a><p>{{ user.full_name }}</p><small>{% portal_label user.get_role_display %}</small><div role="group" aria-label="Language"><button type="button" class="ui-button" lang="bn" aria-pressed="{% if portal_language_code == 'bn' %}true{% else %}false{% endif %}">বাংলা</button><button type="button" class="ui-button" lang="en" aria-pressed="{% if portal_language_code == 'en' %}true{% else %}false{% endif %}">English</button></div></div>
+<nav class="ui-sidebar-menu" aria-label="Portal">
+{% if user.role == 'volunteer' %}
+{% portal_link "volunteer_dashboard" "ড্যাশবোর্ড" "Dashboard" %}
+{% portal_link "volunteer_missions" "মিশন" "Missions" %}
+{% portal_link "volunteer_requests" "আবেদন" "Requests" %}
+{% portal_link "volunteer_profile" "প্রোফাইল" "Profile" %}
+{% portal_link "volunteer_organizations" "সংগঠন খুঁজুন" "Find organizations" %}
+{% portal_link "volunteer_organization" "আমার সংগঠন" "My organization" %}
+{% portal_link "volunteer_team" "আমার দল" "My team" %}
+{% elif user.role == 'organization_admin' %}
+{% portal_link "org_dashboard" "ড্যাশবোর্ড" "Dashboard" %}
+{% portal_link "org_profile" "সংগঠনের প্রোফাইল" "Organization profile" %}
+{% if user.managed_organization.verification_status == 'approved' %}
+{% portal_link "org_requests" "আবেদন" "Requests" %}
+{% portal_link "org_memberships" "সদস্যতার আবেদন" "Membership applications" %}
+{% portal_link "org_volunteers" "সদস্য" "Members" %}
+{% portal_link "org_teams" "দল" "Teams" %}
+{% portal_link "org_missions" "মিশন" "Missions" %}{% endif %}
+{% elif user.role == 'super_admin' %}
+{% portal_link "admin_dashboard" "ড্যাশবোর্ড" "Dashboard" %}
+{% portal_link "admin_requests" "আবেদন" "Requests" %}
+{% portal_link "admin_missions" "মিশন" "Missions" %}
+{% portal_link "admin_organizations" "সংগঠন" "Organizations" %}
+{% portal_link "admin_teams" "দল" "Teams" %}
+{% portal_link "admin_resources" "যোগাযোগ" "Resource contacts" %}
+{% portal_link "admin_account_recovery" "অ্যাকাউন্ট পুনরুদ্ধার" "Account recovery" %}
+{% endif %}{% portal_link "resources" "সহায়তার যোগাযোগ" "Public directory" %}{% portal_link "account_settings" "অ্যাকাউন্ট" "Account settings" %}</nav></aside>

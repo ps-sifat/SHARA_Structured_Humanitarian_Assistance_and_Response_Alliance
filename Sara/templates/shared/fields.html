@@ -1,0 +1,3 @@
+{% if form.errors %}<div class="ui-form-error" role="alert" tabindex="-1"><strong>তথ্য সংশোধন করুন / Please correct the form</strong>{{ form.non_field_errors }}{% for field in form %}{% if field.errors %}<p><a href="#{{ field.id_for_label }}">{{ field.label }}</a>: {{ field.errors|striptags }}</p>{% endif %}{% endfor %}</div>{% endif %}
+{% for field in form.hidden_fields %}{{ field }}{% endfor %}
+<div class="ui-field-grid">{% for field in form.visible_fields %}{% include "shared/field.html" %}{% endfor %}</div>

@@ -1,0 +1,6 @@
+{% load static %}<!doctype html>
+<html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SHARA — Structured Humanitarian Assistance and Response Alliance">
+<title>{% block title %}SHARA{% endblock %}</title>
+<link rel="icon" href="{% static 'assets/icons/favicon.svg' %}" type="image/svg+xml"><link rel="preload" href="{% static 'assets/fonts/bengali-1.ttf' %}" as="font" type="font/ttf" crossorigin><link rel="preload" href="{% static 'assets/fonts/bengali-3.ttf' %}" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="{% static 'base.css' %}">{% block styles %}{% endblock %}<link rel="stylesheet" href="{% static 'visual-refresh.css' %}"><link rel="stylesheet" href="{% static 'portal-stability.css' %}"></head>
+<body><div id="shara-app">{% block content %}{% endblock %}</div>{% block scripts %}{% endblock %}</body></html>

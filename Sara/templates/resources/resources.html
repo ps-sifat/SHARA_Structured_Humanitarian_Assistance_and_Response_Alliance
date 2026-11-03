@@ -1,0 +1,14 @@
+{% extends "shared/page.html" %}{% block page_content %}
+<form method="get" action="{% url 'resources' %}" class="ui-filters" role="search">
+  <label class="ui-field">কার্ডের যেকোনো তথ্য / Any detail on the card
+    <input type="search" name="search" value="{{ request.GET.search }}">
+  </label>
+  <label class="ui-field">ধরন / Category
+    <select name="category"><option value="">সব / All</option>{% for code,label in categories %}<option value="{{ code }}"{% if request.GET.category == code %} selected{% endif %}>{{ label }}</option>{% endfor %}</select>
+  </label>
+  <label class="ui-field">জেলা / District
+    <select name="district"><option value="">সব / All</option>{% for code, district in geography.items %}<option value="{{ code }}"{% if request.GET.district == code %} selected{% endif %}>{{ district.name }}</option>{% endfor %}</select>
+  </label>
+  <button type="submit" class="ui-button">খুঁজুন / Search</button>
+</form>
+{% include "shared/contact_batch.html" %}{% endblock %}

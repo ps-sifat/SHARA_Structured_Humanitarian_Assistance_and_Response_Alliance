@@ -1,0 +1,7 @@
+<article class="ui-card">
+<h2>{% if record.detail_url %}<a class="ui-link" href="{{ record.detail_url }}">{{ record.reference }}</a>{% else %}{{ record.reference }}{% endif %}</h2>
+<p>{{ record.area }} · {{ record.person_count }} <span data-en="people">জন</span></p>
+<p>{% for need in record.needs %}<span class="ui-badge" data-need="{{ need }}">{{ need }}</span> {% endfor %}</p>
+<p class="ui-record-state"><span class="ui-state" data-state="{{ record.priority }}">{{ record.priority }}</span><span class="ui-state" data-state="{{ record.status }}">{{ record.status }}</span>{% if record.stage %}<span class="ui-state" data-state="{{ record.stage }}">{{ record.stage }}</span>{% endif %}</p>
+{% if record.attempt %}<p><span data-en="Attempt">প্রচেষ্টা</span> {{ record.attempt }} · {{ record.target }}</p>{% endif %}
+<small><time datetime="{{ record.created_at|date:'c' }}">{{ record.created_at|date:"d M Y H:i" }}</time></small></article>
