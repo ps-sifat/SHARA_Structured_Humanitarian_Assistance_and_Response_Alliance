@@ -1,0 +1,14 @@
+# Existing Git LFS assets needed by the Railway build.
+/Sara/media/organizations/2026/11/ChatGPT_Image_Oct_18_2026_05_16_21_PM-4.png filter=lfs diff=lfs merge=lfs -text
+/Sara/media/organizations/2026/11/Seven_premium_body_oils_neatly_aligned.png filter=lfs diff=lfs merge=lfs -text
+/Sara/media/organizations/2026/11/images.jpg filter=lfs diff=lfs merge=lfs -text
+/Sara/media/volunteers/2026/11/samin.jpg filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-1.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-2.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-3.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-4.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-5.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-6.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-7.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/fonts/bengali-8.ttf filter=lfs diff=lfs merge=lfs -text
+/Sara/static/assets/images/flood-response.jpg filter=lfs diff=lfs merge=lfs -text
