@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: bd-public-officer-crawler
+Version: 1.0.0
+Summary: Reusable crawler for public Bangladesh government officer tables
+Requires-Python: >=3.10
+Requires-Dist: httpx<1,>=0.28
+Requires-Dist: beautifulsoup4<5,>=4.12
+Requires-Dist: pdfplumber<0.12,>=0.11
+Requires-Dist: truststore<1,>=0.10
