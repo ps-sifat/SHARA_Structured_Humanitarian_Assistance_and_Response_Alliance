@@ -8,4 +8,4 @@ This configuration is **only for testing**. Each Vercel function instance uses i
 4. Deploy. In Vercel project **Settings > Git**, enable Git LFS and redeploy; images and fonts are LFS files. Make sure the referenced LFS objects have been pushed to GitHub (`git lfs push origin main`).
 5. Check the deploy logs and test the home page, login, CSS and images. Function instances do not share data. Vercel's function request limit is 4.5 MB, lower than the app's 5 MB image limit.
 
-The existing Railway configuration is independent. Do not use the Vercel test deployment for real users or sensitive data.
+Do not use the Vercel test deployment for real users or sensitive data.

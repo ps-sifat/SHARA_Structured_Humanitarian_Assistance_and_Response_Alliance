@@ -60,4 +60,4 @@ for source in (BASE_DIR / 'media').rglob('*'):  # noqa: F405
             pass
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # noqa: F405
-ROOT_URLCONF = 'Sara.railway_urls'
+ROOT_URLCONF = 'Sara.vercel_urls'
