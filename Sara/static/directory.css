@@ -1,4 +1,22 @@
 /* Contact cards: shared by the public directory and contact administration. */
+.ui-page-resources .directory-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border: 1px solid #b9ded9;
+  border-radius: 14px;
+  background: #edf8f6;
+  color: #153f3d;
+}
+.directory-notice-icon { width: 22px; height: 22px; flex: 0 0 22px; margin-top: 2px; color: #087d78; }
+.ui-page-resources .directory-notice h2 { margin: 0 0 4px; color: #153f3d; font-size: 17px; line-height: 1.4; }
+.ui-page-resources .directory-notice p { margin: 0; color: #244f4c; font-size: 15px; line-height: 1.6; }
+@media (max-width: 600px) {
+  .ui-page-resources .directory-notice { gap: 12px; padding: 16px; }
+}
+
 .ui-contact-list .directory-card {
   --contact-teal: #087d78;
   --contact-ink: #10294d;
